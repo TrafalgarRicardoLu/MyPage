@@ -13,7 +13,6 @@ import java.util.List;
 
 
 @Repository
-@Transactional
 public class UserDao {
 
     @Autowired
@@ -24,6 +23,18 @@ public class UserDao {
         session.save(user);
         session.close();
         return;
+    }
+
+    public List<User> all(){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from User");
+        List<User> users = query.list();
+        for(User user:users){
+            System.out.println(user.getId());
+            System.out.println(user.getName());
+            System.out.println(user.getPassword());
+        }
+        return query.list();
     }
 
 

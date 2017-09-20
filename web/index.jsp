@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+    <a href="all">Show ALl Users</a><br/>
+    <a href="save">Create New User</a>
   </body>
 </html>

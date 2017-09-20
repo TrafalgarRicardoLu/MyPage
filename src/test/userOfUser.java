@@ -5,13 +5,9 @@ import Entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.serviceloader.ServiceFactoryBean;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
 
 
 public class userOfUser {

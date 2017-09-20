@@ -13,12 +13,13 @@ public class UserService {
     @Autowired
     UserDao userDao;
 
-    public void save(){
-        User user =new User();
-        user.setName("asd");
-        user.setPassword("asd1");
-        user.setId(1);
+    public void save(User user){
+
         userDao.save(user);
+    }
+
+    public List<User> all(){
+        return userDao.all();
     }
 
 }
