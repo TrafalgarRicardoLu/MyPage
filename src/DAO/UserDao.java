@@ -3,12 +3,9 @@ package DAO;
 import Entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 
@@ -35,6 +32,13 @@ public class UserDao {
             System.out.println(user.getPassword());
         }
         return query.list();
+    }
+
+    public User searchUser(String userName){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from User where name = ?");
+        query.setParameter(0,userName);
+        return (User) query.uniqueResult();
     }
 
 

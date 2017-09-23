@@ -7,11 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-    <a href="all">Show ALl Users</a><br/>
-    <a href="save">Create New User</a>
-  </body>
+</head>
+<body>
+<a href="all">Show ALl Users</a><br/>
+<a href="save">Create New User</a><br/>
+<a href="search">Search User</a>
+</body>
 </html>

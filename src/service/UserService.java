@@ -13,13 +13,11 @@ public class UserService {
     @Autowired
     UserDao userDao;
 
-    public void save(User user){
-
-        userDao.save(user);
-    }
+    public void save(User user){ userDao.save(user); }
 
     public List<User> all(){
         return userDao.all();
     }
 
+    public User searchUser(String userName){ return userDao.searchUser(userName);}
 }
