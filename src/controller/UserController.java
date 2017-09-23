@@ -25,7 +25,7 @@ public class UserController {
 
     @RequestMapping(value = "all", method = RequestMethod.GET)
     public String all(Map<String, Object> map) {
-        List<User> users = userService.all();
+        List<User> users = userService.allUser();
         map.put("users", users);
         return "all";
     }
@@ -35,19 +35,46 @@ public class UserController {
         User user = new User();
         user.setName(httpServletRequest.getParameter("name"));
         user.setPassword(httpServletRequest.getParameter("password"));
-        userService.save(user);
+        userService.saveUser(user);
         return "success";
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
-    public String search() { return "search"; }
-
-    @RequestMapping(value = "searchUser",method = RequestMethod.GET)
-    public String searchUser(HttpServletRequest httpServletRequest){
-        String userName = httpServletRequest.getParameter("name");
-        User user=userService.searchUser(userName);
-        httpServletRequest.setAttribute("user",user);
-        return "searchResult";
-
+    public String search() {
+        return "search";
     }
+
+    @RequestMapping(value = "searchUser", method = RequestMethod.GET)
+    public String searchUser(HttpServletRequest httpServletRequest) {
+        String userName = httpServletRequest.getParameter("name");
+        User user = userService.searchUser(userName);
+        httpServletRequest.setAttribute("user", user);
+        return "searchResult";
+    }
+
+
+    @RequestMapping(value = "delete",method = RequestMethod.GET)
+    public String delete() {
+        return "delete";
+    }
+
+    @RequestMapping(value = "deleteUser", method = RequestMethod.GET)
+    public String deleteUser(HttpServletRequest httpServletRequest) {
+        String userName = httpServletRequest.getParameter("name");
+        userService.deleteUser(userName);
+        return "success";
+    }
+
+    @RequestMapping(value = "update",method = RequestMethod.GET)
+    public String update(){return "update";}
+
+    @RequestMapping(value = "updateUser",method = RequestMethod.GET)
+    public String updateUser(HttpServletRequest httpServletRequest){
+        String userName = httpServletRequest.getParameter("username");
+        String password = httpServletRequest.getParameter("newPassword");
+        userService.updateUser(userName,password);
+        return "success";
+    }
+
+
 }
