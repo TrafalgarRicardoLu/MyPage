@@ -305,7 +305,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">Javascript &amp; jQuery<span class="level-label">Expert</span>
+                                <h3 class="level-title">Spring &amp; Hibernate<span class="level-label">Expert</span>
                                 </h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="96%">
