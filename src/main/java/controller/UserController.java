@@ -13,10 +13,17 @@ import java.util.Map;
 
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserService userService;
+
+    @RequestMapping(value = "index",method = RequestMethod.GET)
+    public String index(){
+        return "index";
+    }
+
 
     @RequestMapping(value = "save", method = RequestMethod.GET)
     public String save() {

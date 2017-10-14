@@ -48,7 +48,8 @@
                 <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
             </ul>
         </div><!--//profile-->
-        <a class="btn btn-cta-primary pull-right" href="#" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>
+        <a class="btn btn-cta-primary pull-right" href="trafalgarricardolu@gmail.com" target="_blank"><i
+                class="fa fa-paper-plane"></i> Contact Me</a>
     </div><!--//container-->
 </header><!--//header-->
 
@@ -105,46 +106,6 @@
 
                         </div><!--//item-->
                         <hr class="divider"/>
-                        <div class="item row">
-                            <a class="col-md-4 col-sm-4 col-xs-12"
-                               href="#website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-5.png"
-                                     alt="project name"/>
-                            </a>
-                            <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a
-                                        href="#website-templates/responsive-bootstrap-theme-mobile-apps-atom/"
-                                        target="_blank">Atom - Designed for Mobile Apps</a></h3>
-                                <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus
-                                    a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu
-                                    suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non
-                                    turpis.</p>
-                                <p><a class="more-link"
-                                      href="#website-templates/responsive-bootstrap-theme-mobile-apps-atom/"
-                                      target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                            </div><!--//desc-->
-                        </div><!--//item-->
-
-                        <div class="item row">
-                            <a class="col-md-4 col-sm-4 col-xs-12"
-                               href="#website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/"
-                               target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-4.png"
-                                     alt="project name"/>
-                            </a>
-                            <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a
-                                        href="#website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/"
-                                        target="_blank">DevStudio - Designed for Web Development Agencies</a></h3>
-                                <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus
-                                    a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu
-                                    suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non
-                                    turpis.</p>
-                                <p><a class="more-link"
-                                      href="#website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/"
-                                      target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                            </div><!--//desc-->
-                        </div><!--//item-->
 
                         <div class="item row">
                             <a class="col-md-4 col-sm-4 col-xs-12"
@@ -197,34 +158,34 @@
                     <h2 class="heading">Latest Projects</h2>
                     <div class="content">
                         <div class="item">
-                            <h3 class="title"><a href="#">Project Title Cras Lacus</a></h3>
-                            <p class="summary">Provide a brief description of your project. Ut enim ad minima veniam,
-                                quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
-                                commodi consequatu.</p>
+                            <h3 class="title"><a href="#">MyPage</a> <span
+                                    class="label label-theme">Open Source</span></h3>
+                            <p class="summary">A simple web application which built as my own page.</p>
                             <p><a class="more-link"
-                                  href="#website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/"
+                                  href="https://github.com/TrafalgarRicardoLu/MyPage"
                                   target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                        </div><!--//item-->
+                        </div>
+
                         <div class="item">
-                            <h3 class="title"><a href="#">Project Title Cras eget lacus</a> <span
+                            <h3 class="title"><a href="/user/index" target="_blank">Library Management System</a> <span
                                     class="label label-theme">Open Source</span></h3>
-                            <p class="summary">Provide a brief description of your project. Maecenas ornare ultricies
-                                risus, in fermentum augue consectetur in. Vestibulum vitae mauris iaculis, sollicitudin
-                                velit in, molestie nulla. </p>
+                            <p class="summary">A simple Java Web application accomplished with SpringMVC ,Spring
+                                ,Hibernate.
+                                It is build as a Maven Project. </p>
                             <p><a class="more-link"
-                                  href="#website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/"
+                                  href="https://github.com/TrafalgarRicardoLu/MyPage"
                                   target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
                         </div><!--//item-->
                         <div class="item">
-                            <h3 class="title"><a href="#">Project Title Maecenas Ornare</a> <span
+                            <h3 class="title"><a
+                                    href="https://github.com/TrafalgarRicardoLu/Algorithm-and-DataStructure"
+                                    target="_blank">Algorithm-and-DataStructure</a> <span
                                     class="label label-theme">Open Source</span></h3>
-                            <p class="summary">Provide a brief description of your project. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. In vel purus enim. Etiam tortor felis, fermentum ac
-                                ultrices sed.</p>
+                            <p class="summary">Some algorithm and DataStructure.</p>
                             <p><a class="more-link"
-                                  href="#website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/"
+                                  href="https://github.com/TrafalgarRicardoLu/Algorithm-and-DataStructure"
                                   target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-                        </div><!--//item-->
+                        </div>
 
                         <a class="btn btn-cta-secondary" href="#">More on CoderWall <i class="fa fa-chevron-right"></i></a>
 
@@ -237,31 +198,14 @@
                     <h2 class="heading">Work Experience</h2>
                     <div class="content">
                         <div class="item">
-                            <h3 class="title">Co-Founder & Lead Developer - <span class="place"><a
-                                    href="#">Startup Hub</a></span> <span class="year">(2014 - Present)</span></h3>
-                            <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-                                dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
-                                laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit
-                                amet orci eget eros faucibus tincidunt.</p>
-                        </div><!--//item-->
-                        <div class="item">
-                            <h3 class="title">Software Engineer - <span class="place"><a href="#">Google</a></span>
-                                <span class="year">(2013 - 2014)</span></h3>
-                            <p>Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu
-                                suscipit pellentesque, mauris dui tincidunt enim. Sed fringilla mauris sit amet nibh.
-                                Donec sodales sagittis magna.</p>
-                        </div><!--//item-->
+                            <h3 class="title">NULL<span class="place"><a
+                                    href="#">NULL</a></span> <span class="year">(2014 - Present)</span></h3>
+                            <p>ANULL.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div class="item">
-                            <h3 class="title">Software Engineer - <span class="place"><a href="#">eBay</a></span> <span
-                                    class="year">(2012 - 2013)</span></h3>
-                            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
-                                adipiscing sem neque sed ipsum.</p>
-                        </div><!--//item-->
-
-                    </div><!--//content-->
-                </div><!--//section-inner-->
-            </section><!--//section-->
         </div><!--//primary-->
         <div class="secondary col-md-4 col-sm-12 col-xs-12">
             <aside class="info aside section">
@@ -271,9 +215,11 @@
                         <ul class="list-unstyled">
                             <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>HangZhou, CN
                             </li>
-                            <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="trafalgarricardo@gmail.com">trafalgarricardo@gmail.com</a>
+                            <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a
+                                    href="trafalgarricardo@gmail.com">trafalgarricardo@gmail.com</a>
                             </li>
-                            <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="#">http://www.website.com</a>
+                            <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a
+                                    href="https://github.com/TrafalgarRicardoLu">github.com/TrafalgarRicardoLu</a>
                             </li>
                         </ul>
                     </div><!--//content-->
@@ -293,10 +239,10 @@
 
                             <div class="item">
                                 <h3 class="level-title">Java<span class="level-label"
-                                                                                 data-toggle="tooltip"
-                                                                                 data-placement="left"
-                                                                                 data-animation="true"
-                                                                                 title="You can use the tooltip to add more info...">Expert</span>
+                                                                  data-toggle="tooltip"
+                                                                  data-placement="left"
+                                                                  data-animation="true"
+                                                                  title="You can use the tooltip to add more info...">Expert</span>
                                 </h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="96%">

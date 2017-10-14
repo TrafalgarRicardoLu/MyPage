@@ -26,7 +26,6 @@
         <property name="packagesToScan">
             <list>
                 <value>Entity</value>
-
             </list>
         </property>
         <property name="hibernateProperties">

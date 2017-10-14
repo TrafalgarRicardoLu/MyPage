@@ -11,10 +11,10 @@
     <title>$Title$</title>
 </head>
 <body>
-<a href="all">Show ALl Users</a><br/>
-<a href="save">Create New User</a><br/>
-<a href="search">Search User</a><br/>
-<a href="delete">Delete User</a><br/>
-<a href="update">Update User</a>
+<a href="/user/all">Show ALl Users</a><br/>
+<a href="/user/save">Create New User</a><br/>
+<a href="/user/search">Search User</a><br/>
+<a href="/user/delete">Delete User</a><br/>
+<a href="/user/update">Update User</a>
 </body>
 </html>
