@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="item">
-                            <h3 class="title"><a href="/user/index" target="_blank">Library Management System</a> <span
+                            <h3 class="title"><a href="/user/login" target="_blank">Library Management System</a> <span
                                     class="label label-theme">Open Source</span></h3>
                             <p class="summary">A simple Java Web application accomplished with SpringMVC ,Spring
                                 ,Hibernate.

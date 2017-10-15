@@ -19,11 +19,27 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "index",method = RequestMethod.GET)
-    public String index(){
-        return "index";
+
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public String login() {
+        return "login";
     }
 
+    @RequestMapping(value = "loginCheck", method = RequestMethod.GET)
+    public String loginCheck(HttpServletRequest httpServletRequest) {
+        String name = httpServletRequest.getParameter("name");
+        System.out.println(name);
+        String password = httpServletRequest.getParameter("password");
+        System.out.println(password);
+        User user = userService.searchUser(name);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        if (user!=null && user.getPassword().equals( password)){
+            return "index";}
+        else{
+            return "fail";
+        }
+    }
 
     @RequestMapping(value = "save", method = RequestMethod.GET)
     public String save() {
@@ -60,7 +76,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "delete",method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET)
     public String delete() {
         return "delete";
     }
@@ -72,14 +88,16 @@ public class UserController {
         return "success";
     }
 
-    @RequestMapping(value = "update",method = RequestMethod.GET)
-    public String update(){return "update";}
+    @RequestMapping(value = "update", method = RequestMethod.GET)
+    public String update() {
+        return "update";
+    }
 
-    @RequestMapping(value = "updateUser",method = RequestMethod.GET)
-    public String updateUser(HttpServletRequest httpServletRequest){
+    @RequestMapping(value = "updateUser", method = RequestMethod.GET)
+    public String updateUser(HttpServletRequest httpServletRequest) {
         String userName = httpServletRequest.getParameter("username");
         String password = httpServletRequest.getParameter("newPassword");
-        userService.updateUser(userName,password);
+        userService.updateUser(userName, password);
         return "success";
     }
 
