@@ -80,9 +80,7 @@
                     <div class="content">
 
                         <div class="item featured text-center">
-                            <h3 class="title"><a
-                                    href="#website-templates/responsive-bootstrap-theme-for-products-velocity/"
-                                    target="_blank">KickStarter - Velocity</a></h3>
+                            <h3 class="title"><a href="/blog/index" target="_blank">KickStarter - Velocity</a></h3>
                             <p class="summary">A responsive Bootstrap template designed for digital products</p>
                             <div class="featured-image">
                                 <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/"
