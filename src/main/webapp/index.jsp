@@ -12,24 +12,11 @@
     <meta name="description" content="Responsive HTML5 Website landing Page for Developers">
     <meta name="author" content="3rd Wave Media">
     <link rel="shortcut icon" href="favicon.ico">
-    <link href='http://fonts.useso.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <!-- github acitivity css -->
-    <link rel="stylesheet" href="assets/plugins/github-activity/dist/github-activity-0.1.1.min.css">
-    <link rel="stylesheet" href="assets/plugins/github-activity/dist/octicons/octicons.min.css">
-
-
-    <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -108,34 +95,34 @@
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
                                 <h3 class="title"><a
-                                        href="#website-templates/responsive-bootstrap-theme-for-startups-tempo/"
+                                        href="/blog/article1"
                                         target="_blank">Tempo - Designed for Startups</a></h3>
                                 <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus
                                     a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu
                                     suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non
                                     turpis.</p>
                                 <p><a class="more-link"
-                                      href="#website-templates/responsive-bootstrap-theme-for-startups-tempo/"
+                                      href="/blog/article1"
                                       target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
                         <div class="item row">
                             <a class="col-md-4 col-sm-4 col-xs-12"
-                               href="#website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/"
+                               href="/blog/article2"
                                target="_blank">
                                 <img class="img-responsive project-image" src="assets/images/projects/project-2.png"
                                      alt="project name"/>
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
                                 <h3 class="title"><a
-                                        href="#website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/"
+                                        href="/blog/article2"
                                         target="_blank">Delta - Designed for Mobile Apps</a></h3>
                                 <p> You can put one of your secondary projects here. Quisque rutrum. Aenean imperdiet.
                                     Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
                                     Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper
                                     libero, sit amet adipiscing sem neque sed ipsum.</p>
                                 <p><a class="more-link"
-                                      href="#website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/"
+                                      href="/blog/article2"
                                       target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
@@ -390,7 +377,6 @@
 <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
 <!-- github activity plugin -->
 <script type="text/javascript" src="assets/plugins/github-activity/dist/mustache/mustache.min.js"></script>
-<script type="text/javascript" src="assets/plugins/github-activity/dist/github-activity-0.1.1.min.js"></script>
 <!-- custom js -->
 <script type="text/javascript" src="assets/js/main.js"></script>
 </body>

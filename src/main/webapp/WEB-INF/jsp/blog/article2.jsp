@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>article1</title>
+    <title>article2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
@@ -15,7 +15,7 @@
 </head>
 <body class="single">
 <div id="page">
-    <div id="fh5co-aside" style="background-image: url(/assets/images/blog/article1.jpg)" data-stellar-background-ratio="0.5">
+    <div id="fh5co-aside" style="background-image: url(/assets/images/blog/article2.jpg)" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <nav role="navigation">
             <ul>
@@ -88,11 +88,13 @@
         </div>
     </div>
 </div>
+
 <div class="fh5co-navigation">
     <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(/assets/images/blog/article1.jpg)">
 
         <div class="overlay"></div>
-        <a class="copy" href="/blog/index">
+
+        <a class="copy" href="/blog/previousArticle?id=2">
             <div class="display-t">
                 <div class="display-tc">
                     <div>
@@ -104,9 +106,9 @@
         </a>
 
     </div>
-    <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(/assets/images/blog/article2.jpg)">
+    <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(/assets/images/blog/article3.jpg)">
         <div class="overlay"></div>
-        <a class="copy" href="/blog/nextArticle?id=1">
+        <a class="copy" href="/blog/nextArticle?id=2">
             <div class="display-t">
                 <div class="display-tc">
                     <div>

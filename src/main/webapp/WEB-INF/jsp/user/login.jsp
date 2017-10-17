@@ -25,7 +25,7 @@
 
             height:100%;
 
-            background: url("/assets/images/snow.png") no-repeat;
+            background: url("/assets/images/blog/article2.jpg") no-repeat;
 
             background-size:cover;
 
