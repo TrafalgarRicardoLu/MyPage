@@ -76,21 +76,16 @@
 
             <section class="latest section">
                 <div class="section-inner">
-                    <h2 class="heading">Latest Articles</h2>
+                    <h2 class="heading">Articles</h2>
                     <div class="content">
-
                         <div class="item featured text-center">
-                            <h3 class="title"><a href="/blog/index" target="_blank">KickStarter - Velocity</a></h3>
-                            <p class="summary">A responsive Bootstrap template designed for digital products</p>
+                            <h3 class="title"><a href="/blog/index" target="_blank">Blog Index</a></h3>
+                            <p class="summary">My Blog which contain lots of articles</p>
                             <div class="featured-image">
-                                <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/"
-                                   target="_blank">
+                                <a href="/blog/index" target="_blank">
                                     <img class="img-responsive project-image"
-                                         src="assets/images/projects/project-featured.png" alt="project name"/>
+                                         src="assets/images/blog/banner.jpg" alt="MyBlog"/>
                                 </a>
-                                <div class="ribbon">
-                                    <div class="text">New</div>
-                                </div>
                             </div>
 
                             <div class="desc text-left">
@@ -107,7 +102,7 @@
 
                         <div class="item row">
                             <a class="col-md-4 col-sm-4 col-xs-12"
-                               href="#website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank">
+                               href="/blog/article1" target="_blank">
                                 <img class="img-responsive project-image" src="assets/images/projects/project-1.png"
                                      alt="project name"/>
                             </a>

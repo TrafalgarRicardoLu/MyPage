@@ -12,9 +12,9 @@ public class controller {
         return "blog/index";
     }
 
-    @RequestMapping(value = "text1",method = RequestMethod.GET)
+    @RequestMapping(value = "article1",method = RequestMethod.GET)
     public String text1(){
-        return "blog/text1";
+        return "blog/article1";
     }
 
 }
