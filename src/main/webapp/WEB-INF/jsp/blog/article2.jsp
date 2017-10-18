@@ -1,9 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE HTML>
 <html>
+<%
+    String name = "article2";
+%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>article2</title>
+    <title><%=name%></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
@@ -14,6 +19,8 @@
 
 </head>
 <body class="single">
+
+
 <div id="page">
     <div id="fh5co-aside" style="background-image: url(/assets/images/blog/article2.jpg)" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -31,13 +38,7 @@
         <div class="fh5co-post">
             <div class="fh5co-entry padding">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod iure quidem, corrupti commodi
-                        quaerat unde aspernatur quia laborum, autem sapiente dolorum eos velit aliquid dignissimos
-                        molestias qui explicabo, hic a assumenda, expedita praesentium rem eum blanditiis. Fugit at
-                        voluptate nulla quae amet maxime dolorem voluptatum, tempore nam esse ea, mollitia, natus
-                        architecto porro illo nemo! Beatae ut, libero provident sint officia incidunt vitae? Nam labore
-                        commodi recusandae minima ipsa, autem tempora delectus sed ipsum debitis accusamus, aliquid et
-                        doloremque architecto.</p>
+                    <p>h结案数百看吧奥赛难控安东卡奥赛南沙看</p>
                     <p>Qui praesentium expedita rerum iusto eveniet, molestiae velit optio alias ratione tenetur rem
                         architecto sequi! Saepe laboriosam illum, qui laudantium expedita animi natus itaque blanditiis
                         distinctio vero pariatur maxime, aliquid amet non veniam eos et culpa inventore vitae quas!

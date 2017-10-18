@@ -21,7 +21,7 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>  <!--数据库连接驱动-->
-        <property name="url" value="jdbc:mysql://localhost:3306/project?useSSL=true"/>     <!--数据库地址-->
+        <property name="url" value="jdbc:mysql://localhost:3306/project?useUnicode=true&amp;characterEncoding=UTF-8"/>     <!--数据库地址-->
         <property name="username" value="root"/>   <!--用户名-->
         <property name="password" value="root"/>   <!--密码-->
     </bean>

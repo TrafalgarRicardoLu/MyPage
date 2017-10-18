@@ -46,7 +46,7 @@ public class UserController {
     public String all(Map<String, Object> map) {
         List<User> users = userService.allUser();
         map.put("users", users);
-        return "all";
+        return "user/all";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)

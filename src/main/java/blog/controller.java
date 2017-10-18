@@ -30,6 +30,7 @@ public class controller {
         String num = httpServletRequest.getParameter("id");
         int number = Integer.parseInt(num);
         number--;
+        httpServletRequest.setAttribute("id",number);
         return pre + number;
     }
 
@@ -39,6 +40,7 @@ public class controller {
         String num = httpServletRequest.getParameter("id");
         int number = Integer.parseInt(num);
         number++;
+        httpServletRequest.setAttribute("id",number);
         return pre + number;
     }
 

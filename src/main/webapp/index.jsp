@@ -90,7 +90,7 @@
                         <div class="item row">
                             <a class="col-md-4 col-sm-4 col-xs-12"
                                href="/blog/article1" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-1.png"
+                                <img class="img-responsive project-image" src="assets/images/blog/article1.jpg"
                                      alt="project name"/>
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
@@ -110,7 +110,7 @@
                             <a class="col-md-4 col-sm-4 col-xs-12"
                                href="/blog/article2"
                                target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-2.png"
+                                <img class="img-responsive project-image" src="assets/images/blog/article2.jpg"
                                      alt="project name"/>
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
@@ -375,9 +375,6 @@
 <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
-<!-- github activity plugin -->
-<script type="text/javascript" src="assets/plugins/github-activity/dist/mustache/mustache.min.js"></script>
-<!-- custom js -->
 <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
