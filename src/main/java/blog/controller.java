@@ -44,4 +44,29 @@ public class controller {
         return pre + number;
     }
 
+    @RequestMapping(value = "changeArticle", method = RequestMethod.GET)
+    public String changeArticle(HttpServletRequest httpServletRequest) {
+        String pre = "blog/article";
+        String imagePath = "/assets/images/blog/article";
+        String id_s = httpServletRequest.getParameter("id");
+        int id = Integer.parseInt(id_s);
+        String change = httpServletRequest.getParameter("change");
+        if(change=="pre"){
+            id--;
+        }else if(change=="next"){
+            id++;
+        }
+        if(id==0){
+            return "blog/index";
+        }
+        String preImagePath = imagePath+(id-1)+".jpg";
+        String nextImagePath = imagePath+(id+1)+".jpg";
+        httpServletRequest.setAttribute("id",id);
+        imagePath=imagePath+id+".jpg";
+        httpServletRequest.setAttribute("imagePath",imagePath);
+        httpServletRequest.setAttribute("preImagePath",preImagePath);
+        httpServletRequest.setAttribute("nextImagePath",nextImagePath);
+        return "blog/article";
+    }
+
 }

@@ -1,15 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE HTML>
 <html>
-<%
-    String name = "article2";
-    String path ="/assets/images/blog/article2.jpg";
-%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%=name%></title>
+    <title>article</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
@@ -20,15 +15,12 @@
 
 </head>
 <body class="single">
-
-
 <div id="page">
-
-    <div id="fh5co-aside" style="background-image: url(<%=path%>)" data-stellar-background-ratio="0.5">
+    <div id="fh5co-aside" style="background-image: url(${imagePath})" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <nav role="navigation">
             <ul>
-                <li><a href="/blog/index"><i class="icon-home"></i></a></li>
+                <li><a href="index.jsp"><i class="icon-home"></i></a></li>
             </ul>
         </nav>
         <div class="page-title">
@@ -36,12 +28,17 @@
             <span>September 10, 2016</span>
         </div>
     </div>
-
     <div id="fh5co-main-content">
         <div class="fh5co-post">
             <div class="fh5co-entry padding">
                 <div>
-                    <p>h结案数百看吧奥赛难控安东卡奥赛南沙看</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod iure quidem, corrupti commodi
+                        quaerat unde aspernatur quia laborum, autem sapiente dolorum eos velit aliquid dignissimos
+                        molestias qui explicabo, hic a assumenda, expedita praesentium rem eum blanditiis. Fugit at
+                        voluptate nulla quae amet maxime dolorem voluptatum, tempore nam esse ea, mollitia, natus
+                        architecto porro illo nemo! Beatae ut, libero provident sint officia incidunt vitae? Nam labore
+                        commodi recusandae minima ipsa, autem tempora delectus sed ipsum debitis accusamus, aliquid et
+                        doloremque architecto.</p>
                     <p>Qui praesentium expedita rerum iusto eveniet, molestiae velit optio alias ratione tenetur rem
                         architecto sequi! Saepe laboriosam illum, qui laudantium expedita animi natus itaque blanditiis
                         distinctio vero pariatur maxime, aliquid amet non veniam eos et culpa inventore vitae quas!
@@ -92,13 +89,11 @@
         </div>
     </div>
 </div>
-
 <div class="fh5co-navigation">
-    <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(/assets/images/blog/article1.jpg)">
+    <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(${preImagePath})">
 
         <div class="overlay"></div>
-
-        <a class="copy" href="/blog/previousArticle?id=2">
+        <a class="copy" href="/blog/changeArticle?id=${id}&change=pre">
             <div class="display-t">
                 <div class="display-tc">
                     <div>
@@ -110,9 +105,9 @@
         </a>
 
     </div>
-    <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(/assets/images/blog/article3.jpg)">
+    <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(${nextImagePath})">
         <div class="overlay"></div>
-        <a class="copy" href="/blog/nextArticle?id=2">
+        <a class="copy" href="/blog/changeArticle?id=${id}&change=next">
             <div class="display-t">
                 <div class="display-tc">
                     <div>

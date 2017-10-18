@@ -33,6 +33,16 @@
 <div class="content_top" id="articleList">
     <div class="container">
         <div class="fh5co-post">
+
+            <div class="fh5co-entry padding">
+                <img src="/assets/images/blog/article4.jpg" alt="article">
+                <div>
+                    <span class="fh5co-post-date">October 12, 2016</span>
+                    <h2><a href="/blog/changeArticle?id=1">How to be an effective web developer</a></h2>
+                    <p>How two simple exercises changed my life</p>
+                </div>
+            </div>
+
             <div class="fh5co-entry padding">
                 <img src="/assets/images/blog/article1.jpg" alt="article1">
                 <div>
