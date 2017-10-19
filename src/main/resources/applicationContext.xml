@@ -10,11 +10,7 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:component-scan
-            base-package="LibraryManagementSystem.DAO,
-            LibraryManagementSystem.Entity,
-            LibraryManagementSystem.controller,
-            LibraryManagementSystem.service,
-            blog">
+            base-package="LibraryManagementSystem,blog">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -32,6 +28,7 @@
         <property name="packagesToScan">
             <list>
                 <value>LibraryManagementSystem.Entity</value>
+                <value>blog.Entity</value>
             </list>
         </property>
         <property name="hibernateProperties">

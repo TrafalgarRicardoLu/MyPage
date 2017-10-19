@@ -1,0 +1,141 @@
+/*Page Divider*/
+
+
+
+#nav {
+    height: 10%;
+    font-weight: 700;
+    text-align: center;
+    line-height: 0;
+    letter-spacing: -0.063rem; /* 1 */
+}
+
+#nav ul {
+    display: inline-block;
+}
+
+#nav li {
+    display: inline;
+}
+
+#nav a {
+    font-size: 1.25rem; /* 20 */
+    line-height: 1.5rem; /* 20 */
+    color: rgba(255, 255, 255, .65);
+    float: left;
+    padding-bottom: 1.25rem; /* 20 */
+}
+
+#nav li:not( :last-child ) a {
+    border-right: none;
+    margin-right: 1.25rem; /* 20 */
+}
+
+#nav a:hover,
+#nav .active a {
+    color: #fff;
+    position: relative;
+}
+
+#nav .active a:before {
+    width: 0;
+    height: 0;
+    border: 0.625rem solid transparent; /* 10 */
+    border-bottom-color: #fff;
+    border-top: none;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.625rem; /* 10 */
+}
+
+.Lagination {
+    text-align: center;
+}
+
+.Lagination ul {
+    display: inline-block;
+    padding-right: 10%;
+
+}
+
+.Lagination li {
+    display: inline;
+}
+
+.Lagination a {
+    height: 2.5rem; /* 40 */
+    font-size: 1.25rem; /* 20 */
+    line-height: 38px; /* 40 */
+    color: #4d4348;
+    float: left;
+    border: 1px solid #4d4348;
+    padding: 0 1.25rem; /* 20 */
+    margin-top: -1px;
+    text-decoration: none;
+}
+
+.Lagination li:not( :first-child ) a {
+    margin-left: -1px;
+}
+
+.Lagination-current a {
+    color: #fff;
+    background-color: #4d4348;
+}
+
+.Lagination li:not( .Lagination-current ) a:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.Lagination-prev a,
+.Lagination-next a,
+.Lagination-first a,
+.Lagination-last a {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    line-height: 34px; /* 40 */
+}
+
+.Lagination-prev a:before,
+.Lagination-next a:after,
+.Lagination-first a:before,
+.Lagination-last a:after {
+    width: 0;
+    height: 0;
+    border: 0.313rem solid transparent; /* 5 */
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Lagination-prev a:before,
+.Lagination-first a:before {
+    border-left: none;
+    border-right-color: #4d4348;
+    margin-right: 0.313rem; /* 5 */
+}
+
+.Lagination-next a:after,
+.Lagination-last a:after {
+    border-right: none;
+    border-left-color: #4d4348;
+    margin-left: 0.313rem; /* 5 */
+}
+
+.Lagination-first a:before {
+    -webkit-filter: drop-shadow(-0.25rem 0 0 #4d4348); /* 2 */
+    -moz-filter: drop-shadow(-0.25rem 0 0 #4d4348); /* 2 */
+    -ms-filter: drop-shadow(-0.25rem 0 0 #4d4348); /* 2 */
+    -o-filter: drop-shadow(-0.25rem 0 0 #4d4348); /* 2 */
+    filter: drop-shadow(-0.25rem 0 0 #4d4348); /* 2 */
+}
+
+.Lagination-last a:after {
+    -webkit-filter: drop-shadow(0.25rem 0 0 #4d4348); /* 2 */
+    -moz-filter: drop-shadow(0.25rem 0 0 #4d4348); /* 2 */
+    -ms-filter: drop-shadow(0.25rem 0 0 #4d4348); /* 2 */
+    -o-filter: drop-shadow(0.25rem 0 0 #4d4348); /* 2 */
+    filter: drop-shadow(0.25rem 0 0 #4d4348); /* 2 */
+}
