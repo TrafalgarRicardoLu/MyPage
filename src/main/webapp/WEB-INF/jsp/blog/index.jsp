@@ -35,40 +35,32 @@
         <div class="fh5co-post">
 
             <div class="fh5co-entry padding">
-                <img src="/assets/images/blog/article4.jpg" alt="article">
+                <img src="/assets/images/blog/article${listId=listId+1}.jpg" alt="article${listId}">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
-                    <h2><a href="/blog/changeArticle?id=1">How to be an effective web developer</a></h2>
+                    <h2><a href="/blog/changeArticle?id=${listId}">How to be an effective web developer</a></h2>
                     <p>How two simple exercises changed my life</p>
                 </div>
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="/assets/images/blog/article1.jpg" alt="article1">
+                <img src="/assets/images/blog/article${listId=listId+1}.jpg" alt="article${listId}">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
-                    <h2><a href="/blog/article1">How to be an effective web developer</a></h2>
+                    <h2><a href="/blog/changeArticle?id=${listId}">How to be an effective web developer</a></h2>
                     <p>How two simple exercises changed my life</p>
                 </div>
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="/assets/images/blog/article2.jpg" alt="atticle2">
+                <img src="/assets/images/blog/article${listId=listId+1}.jpg" alt="article${listId}">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
-                    <h2><a href="/blog/article2">How to be an effective web developer</a></h2>
+                    <h2><a href="/blog/changeArticle?id=${listId}">How to be an effective web developer</a></h2>
                     <p>How two simple exercises changed my life</p>
                 </div>
             </div>
 
-            <div class="fh5co-entry padding">
-                <img src="/assets/images/blog/article3.jpg" alt="atticle3">
-                <div>
-                    <span class="fh5co-post-date">October 12, 2016</span>
-                    <h2><a href="/blog/article3">How to be an effective web developer</a></h2>
-                    <p>How two simple exercises changed my life</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
