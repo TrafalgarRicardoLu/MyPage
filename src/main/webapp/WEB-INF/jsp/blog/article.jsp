@@ -20,7 +20,7 @@
         <div class="overlay"></div>
         <nav role="navigation">
             <ul>
-                <li><a href="/blog/index"><i class="icon-home"></i></a></li>
+                <li><a href="/blog/index?Page=1"><i class="icon-home"></i></a></li>
             </ul>
         </nav>
         <div class="page-title">

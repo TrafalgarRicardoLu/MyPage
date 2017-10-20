@@ -19,14 +19,20 @@ public class controller {
 
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index(HttpServletRequest httpServletRequest) {
-        Integer listId = articleService.maxId();
+        int countArticle = articleService.maxId();
+        int countPage = countArticle/3;
+        String Page_s = httpServletRequest.getParameter("Page");
+        int Page = Integer.parseInt(Page_s);
+        countArticle-=3*(Page-1);
         Map<Integer,Article> articleMap = new LinkedHashMap<Integer, Article>();
 
-        for(int i=listId;listId-i<=3 && i>0 ;i--){
+        for(int i=countArticle;countArticle-i<3 && i>0 ;i--){
             Article article = articleService.searchArticle(i);
             articleMap.put(i,article);
         }
-        httpServletRequest.setAttribute("listId",listId+1);
+
+        httpServletRequest.setAttribute("currentPage",Page);
+        httpServletRequest.setAttribute("countPage",countPage);
         httpServletRequest.setAttribute("articleMap",articleMap);
         return "blog/index";
     }
@@ -40,19 +46,25 @@ public class controller {
         if(change==null){
 
         } else if (change.equals("pre")) {
-            id--;
-        } else if(change.equals("next")){
             id++;
+        } else if(change.equals("next")){
+            id--;
         }
 
-        if (id == 0) {
-            return "blog/index";
+        if (id == 0 || id==articleService.maxId()+1) {
+            return "redirect:index?Page=1";
         }
 
         Article article = articleService.searchArticle(id);
-        String preImagePath = id==1?imagePath + id + ".jpg":imagePath + (id - 1) + ".jpg";
-        String nextImagePath = imagePath + (id + 1) + ".jpg";
+        String preImagePath = id==1?imagePath + id + ".jpg":imagePath + (id + 1) + ".jpg";
+        String nextImagePath = imagePath + (id - 1) + ".jpg";
         imagePath = imagePath + id + ".jpg";
+        if(id==1){
+            nextImagePath="/assets/images/blog/banner.jpg";
+        }
+        if(id==articleService.maxId()){
+            preImagePath="/assets/images/blog/banner.jpg";
+        }
         httpServletRequest.setAttribute("id", id);
         httpServletRequest.setAttribute("imagePath", imagePath);
         httpServletRequest.setAttribute("preImagePath", preImagePath);

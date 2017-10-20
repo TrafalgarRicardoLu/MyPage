@@ -38,14 +38,14 @@
     <div class="container">
         <div class="fh5co-post">
             <c:forEach items="${articleMap}" var="article">
-            <div class="fh5co-entry padding">
-                <img src="/assets/images/blog/article${listId=listId-1}.jpg" alt="${article.value.title}">
-                <div>
-                    <span class="fh5co-post-date">${article.value.date}</span>
-                    <h2><a href="/blog/changeArticle?id=${listId}">${article.value.title}</a></h2>
-                    <p>${article.value.title}</p>
+                <div class="fh5co-entry padding">
+                    <img src="/assets/images/blog/article${article.key}.jpg" alt="${article.value.title}">
+                    <div>
+                        <span class="fh5co-post-date">${article.value.date}</span>
+                        <h2><a href="/blog/changeArticle?id=${article.key}">${article.value.title}</a></h2>
+                        <p>${article.value.title}</p>
+                    </div>
                 </div>
-            </div>
             </c:forEach>
         </div>
     </div>
@@ -53,13 +53,17 @@
 <div>
     <nav class="Lagination">
         <ul>
-            <li class ="Lagination-first"><a href="" title="First page" aria-label="First page">First</a></li>
-            <li class="Lagination-number Lagination-current">
-                <a href="" title="Page 1, current page" aria-label="1, current page">1</a></li>
-            <li class="Lagination-number"><a href="" title="Page 2">2</a></li>
-            <li class="Lagination-number"><a href="" title="Page 3">3</a></li>
-            <li class="Lagination-number"><a href="" title="Page 4">4</a></li>
-            <li class="Lagination-last"><a href="" title="Last page" aria-label="Last page">Last</a></li>
+            <li class="Lagination-first"><a href="/blog/index?Page=1" title="First page" aria-label="First page">First</a></li>
+            <c:forEach var="i" begin="1" end="${countPage}">
+                <c:if test="${i==currentPage}">
+                <li class="Lagination-number Lagination-current"><a href="/blog/index?Page=${i}" title="Page ${i}">${i}</a></li>
+                </c:if>
+                <c:if test="${i!=currentPage}">
+                <li class="Lagination-number"><a href="/blog/index?Page=${i}" title="Page ${i}">${i}</a></li>
+                </c:if>
+            </c:forEach>
+
+            <li class="Lagination-last"><a href="/blog/index?Page=${countPage}" title="Last page" aria-label="Last page">Last</a></li>
         </ul>
     </nav>
 </div>
