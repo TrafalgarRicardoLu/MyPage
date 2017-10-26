@@ -1,5 +1,6 @@
 package blog.service;
 
+import LibraryManagementSystem.Entity.User;
 import blog.DAO.articleDAO;
 import blog.Entity.Article;
 import org.pegdown.PegDownProcessor;
@@ -39,5 +40,9 @@ public class articleService {
 
     public Article searchArticle(int id) {
         return articleDAO.searchArticle(id);
+    }
+
+    public User check(){
+        return articleDAO.check();
     }
 }

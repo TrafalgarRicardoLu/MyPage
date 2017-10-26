@@ -1,5 +1,6 @@
 package blog.controller;
 
+import LibraryManagementSystem.Entity.User;
 import blog.Entity.Article;
 import blog.service.articleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,4 +79,29 @@ public class controller {
         return "blog/article";
     }
 
+    @RequestMapping(value = "add",method = RequestMethod.GET)
+    public String add(){
+        return "blog/login";
+    }
+
+    @RequestMapping(value = "loginCheck",method =RequestMethod.GET)
+    public String loginCheck(HttpServletRequest httpServletRequest){
+        User user = articleService.check();
+        boolean name = user.getName().equals(httpServletRequest.getParameter("name"));
+        boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
+        if(name&&password){
+            return "blog/addArticle";
+        }
+        return "redirect:index?Page=1";
+    }
+
+    @RequestMapping(value = "addArticle",method = RequestMethod.GET)
+    public String addArticle(HttpServletRequest httpServletRequest){
+        Article article = new Article();
+        article.setTitle(httpServletRequest.getParameter("title"));
+        article.setContent(httpServletRequest.getParameter("content"));
+        if(!article.getContent().equals("") && !article.getTitle().equals(""));
+        articleService.addArtilce(article);
+        return "redirect:index?Page=1";
+    }
 }

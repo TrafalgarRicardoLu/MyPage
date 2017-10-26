@@ -10,6 +10,8 @@
     <link href="/assets/plugins/bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <link href="/assets/css/styleBlog.css" rel='stylesheet' type='text/css'/>
     <link href="/assets/css/Divider.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="/assets/css/icomoon.css">
+    <link rel="stylesheet" href="/assets/css/styleSingle.css">
     <script src="/assets/plugins/jquery-1.11.2.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -67,6 +69,16 @@
         </ul>
     </nav>
 </div>
+<div class="gototop js-top">
+    <a href="/blog/add"><i class="icon-file-add"></i></a>
+</div>
+
+<script src="/assets/plugins/jquery-1.11.2.min.js"></script>
+<script src="/assets/js/jquery.easing.1.3.js"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.waypoints.min.js"></script>
+<script src="/assets/js/jquery.stellar.min.js"></script>
+<script src="/assets/js/mainBlog.js"></script>
 
 
 </body>
