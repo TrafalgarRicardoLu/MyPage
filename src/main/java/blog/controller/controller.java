@@ -20,20 +20,25 @@ public class controller {
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index(HttpServletRequest httpServletRequest) {
         int countArticle = articleService.maxId();
-        int countPage = countArticle/3;
+        int countPage = (int) Math.ceil(countArticle/3.0);
         String Page_s = httpServletRequest.getParameter("Page");
         int Page = Integer.parseInt(Page_s);
         countArticle-=3*(Page-1);
-        Map<Integer,Article> articleMap = new LinkedHashMap<Integer, Article>();
 
+        Map<Integer,Article> articleMap = new LinkedHashMap<Integer, Article>();
         for(int i=countArticle;countArticle-i<3 && i>0 ;i--){
             Article article = articleService.searchArticle(i);
             articleMap.put(i,article);
         }
 
+
+        httpServletRequest.setAttribute("countPage",countArticle);
         httpServletRequest.setAttribute("currentPage",Page);
         httpServletRequest.setAttribute("countPage",countPage);
         httpServletRequest.setAttribute("articleMap",articleMap);
+        httpServletRequest.setAttribute("maxArticle",countArticle);
+
+
         return "blog/index";
     }
 

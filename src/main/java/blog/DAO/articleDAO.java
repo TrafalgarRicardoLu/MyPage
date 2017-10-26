@@ -23,6 +23,9 @@ public class articleDAO {
 
     public void addArtilce(Article article){
         Session session = sessionFactory.openSession();
+        String content = article.getContent();
+        content.replaceAll(" ","</br>");
+        article.setContent(content);
         session.save(article);
         session.close();
         return;

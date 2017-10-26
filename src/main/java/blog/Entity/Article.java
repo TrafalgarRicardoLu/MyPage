@@ -19,7 +19,7 @@ public class Article {
     @Column(columnDefinition = "text")
     String content;
 
-    @Column(columnDefinition = "date")
+    @Column()
     String date;
 
     public int getId() {

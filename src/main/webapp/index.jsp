@@ -87,45 +87,25 @@
                         </div><!--//item-->
                         <hr class="divider"/>
 
-                        <div class="item row">
-                            <a class="col-md-4 col-sm-4 col-xs-12"
-                               href="/blog/article1" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/blog/article1.jpg"
-                                     alt="project name"/>
-                            </a>
-                            <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a
-                                        href="/blog/article1"
-                                        target="_blank">Tempo - Designed for Startups</a></h3>
-                                <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus
-                                    a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu
-                                    suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non
-                                    turpis.</p>
-                                <p><a class="more-link"
-                                      href="/blog/article1"
-                                      target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                            </div><!--//desc-->
-                        </div><!--//item-->
-                        <div class="item row">
-                            <a class="col-md-4 col-sm-4 col-xs-12"
-                               href="/blog/article2"
-                               target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/blog/article2.jpg"
-                                     alt="project name"/>
-                            </a>
-                            <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a
-                                        href="/blog/article2"
-                                        target="_blank">Delta - Designed for Mobile Apps</a></h3>
-                                <p> You can put one of your secondary projects here. Quisque rutrum. Aenean imperdiet.
-                                    Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-                                    Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper
-                                    libero, sit amet adipiscing sem neque sed ipsum.</p>
-                                <p><a class="more-link"
-                                      href="/blog/article2"
-                                      target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                            </div><!--//desc-->
-                        </div><!--//item-->
+                        <%--<div class="item row">--%>
+                            <%--<a class="col-md-4 col-sm-4 col-xs-12"--%>
+                               <%--href="/blog/article?${maxArticle}" target="_blank">--%>
+                                <%--<img class="img-responsive project-image" src="assets/images/blog/article${maxArticle}.jpg"--%>
+                                     <%--alt="project name"/>--%>
+                            <%--</a>--%>
+                            <%--<div class="desc col-md-8 col-sm-8 col-xs-12">--%>
+                                <%--<h3 class="title"><a--%>
+                                        <%--href="/blog/article1"--%>
+                                        <%--target="_blank">Tempo - Designed for Startups</a></h3>--%>
+                                <%--<p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus--%>
+                                    <%--a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu--%>
+                                    <%--suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non--%>
+                                    <%--turpis.</p>--%>
+                                <%--<p><a class="more-link"--%>
+                                      <%--href="/blog/article1"--%>
+                                      <%--target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>--%>
+                            <%--</div><!--//desc-->--%>
+                        <%--</div><!--//item-->--%>
 
                     </div><!--//content-->
                 </div><!--//section-inner-->
@@ -172,19 +152,6 @@
                     </div><!--//content-->
                 </div><!--//section-inner-->
             </section><!--//section-->
-
-            <section class="experience section">
-                <div class="section-inner">
-                    <h2 class="heading">Work Experience</h2>
-                    <div class="content">
-                        <div class="item">
-                            <h3 class="title">NULL<span class="place"><a
-                                    href="#">NULL</a></span> <span class="year">(2014 - Present)</span></h3>
-                            <p>ANULL.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
         </div><!--//primary-->
         <div class="secondary col-md-4 col-sm-12 col-xs-12">
@@ -299,64 +266,6 @@
                 </div><!--//section-inner-->
             </aside><!--//section-->
 
-
-            <aside class="list music aside section">
-                <div class="section-inner">
-                    <h2 class="heading">Favourite coding music</h2>
-                    <div class="content">
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>
-                            <li><i class="fa fa-headphones"></i> <a href="#">Ut sollicitudin in mauris non auctor</a>
-                            </li>
-                            <li><i class="fa fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>
-                            <li><i class="fa fa-headphones"></i> <a href="#">Duis et felis bibendum</a></li>
-                        </ul>
-                    </div><!--//content-->
-                </div><!--//section-inner-->
-            </aside><!--//section-->
-
-
-            <aside class="credits aside section">
-                <div class="section-inner">
-                    <h2 class="heading">Credits</h2>
-                    <div class="content">
-                        <ul class="list-unstyled">
-                            <li><a href="http://getbootstrap.com/" target="_blank"><i class="fa fa-external-link"></i>
-                                Bootstrap 3.2</a></li>
-                            <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><i
-                                    class="fa fa-external-link"></i> FontAwsome 4.1</a></li>
-                            <li><a href="http://jquery.com/" target="_blank"><i class="fa fa-external-link"></i> jQuery</a>
-                            </li>
-                            <li><a href="http://caseyscarborough.com/projects/github-activity/" target="_blank"><i
-                                    class="fa fa-external-link"></i> GitHub Activity Stream</a></li>
-
-                            <li><a href="https://github.com/sdepold/jquery-rss" target="_blank"><i
-                                    class="fa fa-external-link"></i> jQuery RSS</a></li>
-
-                            <li>Profile image: <a href="https://www.flickr.com/photos/dotbenjamin/2577394151"
-                                                  target="_blank">Ben Smith</a></li>
-                            <li>iPad and iPhone mocks: <a href="https://dribbble.com/perlerar" target="_blank">Regy
-                                Perlera</a></li>
-
-                        </ul>
-
-                        <hr/>
-
-                        <p>This responsive HTML5 CSS3 site template is handcrafted by UX designer <a
-                                href="https://www.linkedin.com/in/xiaoying" target="_blank">Xiaoying Riley</a> at <a
-                                href="#" target="_blank">3rd Wave Media</a> for developers and is <strong>FREE</strong>
-                            under the <a class="dotted-link" href="http://creativecommons.org/licenses/by/3.0/"
-                                         target="_blank">Creative Commons Attribution 3.0 License</a></p>
-                        <p>We will improve or add new features to this template based on users' feedback so follow us on
-                            twitter to get notified when a new version is out!</p>
-                        <a class="btn btn-cta-secondary btn-follow" href="https://twitter.com/3rdwave_themes"
-                           target="_blank"><i class="fa fa-twitter"></i> Follow us</a>
-                        <a class="btn btn-cta-primary btn-download"
-                           href="#website-templates/free-responsive-website-template-for-developers/" target="_blank"><i
-                                class="fa fa-download"></i> I want to download</a>
-                    </div><!--//content-->
-                </div><!--//section-inner-->
-            </aside><!--//section-->
 
         </div><!--//secondary-->
     </div><!--//row-->
