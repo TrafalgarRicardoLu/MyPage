@@ -11,7 +11,7 @@
     <title>AddArticle</title>
 </head>
 <body>
-<form action="/blog/addArticle">
+<form action="/blog/addArticle" method="post">
     <input type="text" name="title"><br>
     <textarea rows="30" cols="30" name="content"></textarea><br>
     <input type="submit" name="提交">

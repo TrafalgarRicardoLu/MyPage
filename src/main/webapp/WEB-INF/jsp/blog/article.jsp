@@ -51,7 +51,7 @@
                 <div class="display-tc">
                     <div>
                         <span>Previous Post</span>
-                        <h2>How to be an affective web developer</h2>
+                        <h2>${preTitle}</h2>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div class="display-tc">
                     <div>
                         <span>Next Post</span>
-                        <h2>How to be an affective web developer</h2>
+                        <h2>${nextTitle}</h2>
                     </div>
                 </div>
             </div>

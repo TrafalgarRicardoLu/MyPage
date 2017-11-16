@@ -21,23 +21,23 @@ public class controller {
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index(HttpServletRequest httpServletRequest) {
         int countArticle = articleService.maxId();
-        int countPage = (int) Math.ceil(countArticle/3.0);
+        int countPage = (int) Math.ceil(countArticle / 3.0);
         String Page_s = httpServletRequest.getParameter("Page");
         int Page = Integer.parseInt(Page_s);
-        countArticle-=3*(Page-1);
+        countArticle -= 3 * (Page - 1);
 
-        Map<Integer,Article> articleMap = new LinkedHashMap<Integer, Article>();
-        for(int i=countArticle;countArticle-i<3 && i>0 ;i--){
+        Map<Integer, Article> articleMap = new LinkedHashMap<Integer, Article>();
+        for (int i = countArticle; countArticle - i < 3 && i > 0; i--) {
             Article article = articleService.searchArticle(i);
-            articleMap.put(i,article);
+            articleMap.put(i, article);
         }
 
 
-        httpServletRequest.setAttribute("countPage",countArticle);
-        httpServletRequest.setAttribute("currentPage",Page);
-        httpServletRequest.setAttribute("countPage",countPage);
-        httpServletRequest.setAttribute("articleMap",articleMap);
-        httpServletRequest.setAttribute("maxArticle",countArticle);
+        httpServletRequest.setAttribute("countPage", countArticle);
+        httpServletRequest.setAttribute("currentPage", Page);
+        httpServletRequest.setAttribute("countPage", countPage);
+        httpServletRequest.setAttribute("articleMap", articleMap);
+        httpServletRequest.setAttribute("maxArticle", countArticle);
 
 
         return "blog/index";
@@ -49,59 +49,69 @@ public class controller {
         String id_s = httpServletRequest.getParameter("id");
         int id = Integer.parseInt(id_s);
         String change = httpServletRequest.getParameter("change");
-        if(change==null){
+        if (change == null) {
 
         } else if (change.equals("pre")) {
             id++;
-        } else if(change.equals("next")){
+        } else if (change.equals("next")) {
             id--;
         }
 
-        if (id == 0 || id==articleService.maxId()+1) {
+        if (id == 0 || id == articleService.maxId() + 1) {
             return "redirect:index?Page=1";
         }
 
         Article article = articleService.searchArticle(id);
-        String preImagePath = id==1?imagePath + id + ".jpg":imagePath + (id + 1) + ".jpg";
+        String preImagePath = imagePath + (id + 1) + ".jpg";
         String nextImagePath = imagePath + (id - 1) + ".jpg";
+        String nextTitle=null;
+        String preTitle=null;
         imagePath = imagePath + id + ".jpg";
-        if(id==1){
-            nextImagePath="/assets/images/blog/banner.jpg";
+        if (id == 1) {
+            nextImagePath = "/assets/images/blog/banner.jpg";
+            nextTitle="Index";
         }
-        if(id==articleService.maxId()){
-            preImagePath="/assets/images/blog/banner.jpg";
+        if (id == articleService.maxId()) {
+            preImagePath = "/assets/images/blog/banner.jpg";
+            preTitle="Index";
+        }
+        if(id!=1 && id !=articleService.maxId()){
+            nextTitle=articleService.searchArticle(id-1).getTitle();
+            preTitle=articleService.searchArticle(id+1).getTitle();
         }
         httpServletRequest.setAttribute("id", id);
         httpServletRequest.setAttribute("imagePath", imagePath);
         httpServletRequest.setAttribute("preImagePath", preImagePath);
         httpServletRequest.setAttribute("nextImagePath", nextImagePath);
-        httpServletRequest.setAttribute("article",article);
+        httpServletRequest.setAttribute("article", article);
+        httpServletRequest.setAttribute("preTitle",preTitle);
+        httpServletRequest.setAttribute("nextTitle",nextTitle);
         return "blog/article";
     }
 
-    @RequestMapping(value = "add",method = RequestMethod.GET)
-    public String add(){
+    @RequestMapping(value = "add", method = RequestMethod.GET)
+    public String add() {
         return "blog/login";
     }
 
-    @RequestMapping(value = "loginCheck",method =RequestMethod.GET)
-    public String loginCheck(HttpServletRequest httpServletRequest){
+    @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
+    public String loginCheck(HttpServletRequest httpServletRequest) {
         User user = articleService.check();
         boolean name = user.getName().equals(httpServletRequest.getParameter("name"));
         boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
-        if(name&&password){
+        if (name && password) {
             return "blog/addArticle";
         }
         return "redirect:index?Page=1";
     }
 
-    @RequestMapping(value = "addArticle",method = RequestMethod.GET)
-    public String addArticle(HttpServletRequest httpServletRequest){
+    @RequestMapping(value = "addArticle", method = RequestMethod.POST)
+    public String addArticle(HttpServletRequest httpServletRequest) {
         Article article = new Article();
         article.setTitle(httpServletRequest.getParameter("title"));
         article.setContent(httpServletRequest.getParameter("content"));
-        if(!article.getContent().equals("") && !article.getTitle().equals(""));
-        articleService.addArtilce(article);
+        if (!article.getContent().equals("") && !article.getTitle().equals(""))
+            articleService.addArtilce(article);
         return "redirect:index?Page=1";
     }
 }

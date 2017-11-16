@@ -23,12 +23,12 @@
     </bean>
 
 
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" autowire="byName">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>LibraryManagementSystem.Entity</value>
-                <value>blog.Entity</value>
+                <value>LibraryManagementSystem</value>
+                <value>blog</value>
             </list>
         </property>
         <property name="hibernateProperties">

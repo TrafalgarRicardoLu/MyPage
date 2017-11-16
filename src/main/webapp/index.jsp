@@ -66,7 +66,7 @@
                     <h2 class="heading">Articles</h2>
                     <div class="content">
                         <div class="item featured text-center">
-                            <h3 class="title"><a href="/blog/index?Page=1" target="_blank">Blog Index</a></h3>
+                            <h3 class="title"><a href="/blog/index?Page=1" target="_blank" >Blog Index</a></h3>
                             <p class="summary">My Blog which contain lots of articles</p>
                             <div class="featured-image">
                                 <a href="/blog/index?Page=1" target="_blank">
@@ -86,26 +86,6 @@
 
                         </div><!--//item-->
                         <hr class="divider"/>
-
-                        <%--<div class="item row">--%>
-                            <%--<a class="col-md-4 col-sm-4 col-xs-12"--%>
-                               <%--href="/blog/article?${maxArticle}" target="_blank">--%>
-                                <%--<img class="img-responsive project-image" src="assets/images/blog/article${maxArticle}.jpg"--%>
-                                     <%--alt="project name"/>--%>
-                            <%--</a>--%>
-                            <%--<div class="desc col-md-8 col-sm-8 col-xs-12">--%>
-                                <%--<h3 class="title"><a--%>
-                                        <%--href="/blog/article1"--%>
-                                        <%--target="_blank">Tempo - Designed for Startups</a></h3>--%>
-                                <%--<p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus--%>
-                                    <%--a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu--%>
-                                    <%--suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non--%>
-                                    <%--turpis.</p>--%>
-                                <%--<p><a class="more-link"--%>
-                                      <%--href="/blog/article1"--%>
-                                      <%--target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>--%>
-                            <%--</div><!--//desc-->--%>
-                        <%--</div><!--//item-->--%>
 
                     </div><!--//content-->
                 </div><!--//section-inner-->
