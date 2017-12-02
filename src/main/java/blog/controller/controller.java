@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -62,30 +65,30 @@ public class controller {
         }
 
         Article article = articleService.searchArticle(id);
-        String preImagePath = imagePath + (id + 1) + ".jpg";
-        String nextImagePath = imagePath + (id - 1) + ".jpg";
-        String nextTitle=null;
-        String preTitle=null;
-        imagePath = imagePath + id + ".jpg";
+        String preImagePath = imagePath + (id + 1) + "-M" + ".jpg";
+        String nextImagePath = imagePath + (id - 1) + "-M" + ".jpg";
+        String nextTitle = null;
+        String preTitle = null;
+        imagePath = imagePath + id + "-L" + ".jpg";
         if (id == 1) {
             nextImagePath = "/assets/images/blog/banner.jpg";
-            nextTitle="Index";
+            nextTitle = "Index";
         }
         if (id == articleService.maxId()) {
             preImagePath = "/assets/images/blog/banner.jpg";
-            preTitle="Index";
+            preTitle = "Index";
         }
-        if(id!=1 && id !=articleService.maxId()){
-            nextTitle=articleService.searchArticle(id-1).getTitle();
-            preTitle=articleService.searchArticle(id+1).getTitle();
+        if (id != 1 && id != articleService.maxId()) {
+            nextTitle = articleService.searchArticle(id - 1).getTitle();
+            preTitle = articleService.searchArticle(id + 1).getTitle();
         }
         httpServletRequest.setAttribute("id", id);
         httpServletRequest.setAttribute("imagePath", imagePath);
         httpServletRequest.setAttribute("preImagePath", preImagePath);
         httpServletRequest.setAttribute("nextImagePath", nextImagePath);
         httpServletRequest.setAttribute("article", article);
-        httpServletRequest.setAttribute("preTitle",preTitle);
-        httpServletRequest.setAttribute("nextTitle",nextTitle);
+        httpServletRequest.setAttribute("preTitle", preTitle);
+        httpServletRequest.setAttribute("nextTitle", nextTitle);
         return "blog/article";
     }
 
@@ -106,12 +109,22 @@ public class controller {
     }
 
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
-    public String addArticle(HttpServletRequest httpServletRequest) {
+    public String addArticle(HttpServletRequest httpServletRequest,
+                             @RequestParam("image") MultipartFile multipartFile) throws Exception {
         Article article = new Article();
         article.setTitle(httpServletRequest.getParameter("title"));
         article.setContent(httpServletRequest.getParameter("content"));
+        String img = multipartFile.getOriginalFilename();
+        String localImgPath = "/home/trafalgar/IdeaProjects/MyPage/src/main/webapp/assets/images/blog/article" + (articleService.maxId() + 1);
+        if (multipartFile != null && img.length() > 0) {
+            File localImg = new File(localImgPath + ".jpg");
+            if (!localImg.exists())
+                localImg.createNewFile();
+            multipartFile.transferTo(localImg);
+        }
+
         if (!article.getContent().equals("") && !article.getTitle().equals(""))
-            articleService.addArtilce(article);
+            articleService.addArticle(article, localImgPath);
         return "redirect:index?Page=1";
     }
 }

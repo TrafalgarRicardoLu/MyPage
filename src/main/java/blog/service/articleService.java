@@ -1,6 +1,7 @@
 package blog.service;
 
 import LibraryManagementSystem.Entity.User;
+import Utils.imgResize;
 import blog.DAO.articleDAO;
 import blog.Entity.Article;
 import org.pegdown.PegDownProcessor;
@@ -21,7 +22,7 @@ public class articleService {
     }
 
 
-    public void addArtilce(Article article) {
+    public void addArticle(Article article,String imgPath) throws Exception {
 
         Date now = new Date();
         Calendar cal = Calendar.getInstance();
@@ -32,10 +33,18 @@ public class articleService {
 
         String content = article.getContent();
         PegDownProcessor pegDownProcessor = new PegDownProcessor();
-        String contentResult = pegDownProcessor.markdownToHtml(content);
-        article.setContent(contentResult);
+        content = pegDownProcessor.markdownToHtml(content);
+        content=content.replaceAll("</.*\\bcode\\b>","</pre>");
+        content=content.replaceAll("<.*\\bcode\\b>","<pre>");
+        content=content.replaceAll("&emsp;&emsp;","</br>&emsp;&emsp;");
+        article.setContent(content);
 
-        articleDAO.addArtilce(article);
+        imgResize.saveMinPhoto(imgPath+".jpg",imgPath+"-S.jpg",200,1);
+        imgResize.saveMinPhoto(imgPath+".jpg",imgPath+"-M.jpg",800,1);
+        imgResize.saveMinPhoto(imgPath+".jpg",imgPath+"-L.jpg",2000,1);
+
+
+        articleDAO.addArticle(article);
     }
 
     public Article searchArticle(int id) {

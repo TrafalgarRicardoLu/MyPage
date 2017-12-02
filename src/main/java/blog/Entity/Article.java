@@ -13,7 +13,7 @@ public class Article {
     @ColumnDefault("0")
     int id;
 
-    @Column(length = 12)
+    @Column(length = 64)
     String title;
 
     @Column(columnDefinition = "text")
