@@ -1,13 +1,9 @@
 package Utils;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 
 public class imgResize {
     public static void saveMinPhoto(String srcURL, String deskURL, double comBase,
@@ -44,9 +40,7 @@ public class imgResize {
         }
         BufferedImage tag = new BufferedImage(deskWidth, deskHeight, BufferedImage.TYPE_3BYTE_BGR);
         tag.getGraphics().drawImage(src, 0, 0, deskWidth, deskHeight, null); //绘制缩小后的图
-        FileOutputStream deskImage = new FileOutputStream(deskURL); //输出到文件流
-        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(deskImage);
-        encoder.encode(tag); //近JPEG编码
-        deskImage.close();
+        String formatName = deskURL.substring(deskURL.lastIndexOf(".") + 1);
+        ImageIO.write(tag, /*"GIF"*/ formatName /* format desired */ , new File(deskURL) /* target */ );
     }
 }

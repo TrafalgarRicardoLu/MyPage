@@ -48,9 +48,10 @@ public class controller {
 
     @RequestMapping(value = "changeArticle", method = RequestMethod.GET)
     public String changeArticle(HttpServletRequest httpServletRequest) {
-        String imagePath = "/assets/images/blog/article";
+
         String id_s = httpServletRequest.getParameter("id");
         int id = Integer.parseInt(id_s);
+        String imagePath = "/assets/images/blog/article";
         String change = httpServletRequest.getParameter("change");
         if (change == null) {
 
@@ -65,11 +66,11 @@ public class controller {
         }
 
         Article article = articleService.searchArticle(id);
-        String preImagePath = imagePath + (id + 1) + "-M" + ".jpg";
-        String nextImagePath = imagePath + (id - 1) + "-M" + ".jpg";
+        String preImagePath = imagePath + (id + 1) + "/article" + (id + 1) + "-M" + ".jpg";
+        String nextImagePath = imagePath + +(id - 1) + "/article" + (id - 1) + "-M" + ".jpg";
         String nextTitle = null;
         String preTitle = null;
-        imagePath = imagePath + id + "-L" + ".jpg";
+        imagePath = imagePath + id + "/article" + id + "-L" + ".jpg";
         if (id == 1) {
             nextImagePath = "/assets/images/blog/banner.jpg";
             nextTitle = "Index";
@@ -116,6 +117,10 @@ public class controller {
         article.setContent(httpServletRequest.getParameter("content"));
         String img = multipartFile.getOriginalFilename();
         String localImgPath = "/home/trafalgar/IdeaProjects/MyPage/src/main/webapp/assets/images/blog/article" + (articleService.maxId() + 1);
+        File file = new File(localImgPath);
+        if (!file.exists())
+            file.mkdir();
+        localImgPath = localImgPath + "/article" + (articleService.maxId() + 1);
         if (multipartFile != null && img.length() > 0) {
             File localImg = new File(localImgPath + ".jpg");
             if (!localImg.exists())
