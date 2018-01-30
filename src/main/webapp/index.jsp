@@ -1,7 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
+
 <html lang="en"> <!--<![endif]-->
 <head>
     <title>Trafalgar Ricardo Lu</title>
@@ -29,10 +31,10 @@
             <h1 class="name">Trafalgar Ricardo Lu</h1>
             <h2 class="desc">Web App Developer</h2>
             <ul class="social list-inline">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                <li><a href="https://twitter.com/TrafalgarLu"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/trafalgarricardo.lu.3"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/建惠-鲁-520858137"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/TrafalgarRicardoLu"><i class="fa fa-github-alt"></i></a></li>
             </ul>
         </div><!--//profile-->
         <a class="btn btn-cta-primary pull-right" href="trafalgarricardolu@gmail.com" target="_blank"><i
@@ -47,15 +49,7 @@
                 <div class="section-inner">
                     <h2 class="heading">About Me</h2>
                     <div class="content">
-                        <p>Write a brief intro about yourself. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
-
-                        <p>It's a good idea to include your personal interests and hobbies as well. Commodo ligula eget
-                            dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec.Sed ut perspiciatis unde omnis iste natus
-                            error sit voluptatem accusantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <p>I am a Java web developer,</p>
 
                     </div><!--//content-->
                 </div><!--//section-inner-->
@@ -76,12 +70,7 @@
                             </div>
 
                             <div class="desc text-left">
-                                <p>You can promote your main project here. Suspendisse in tellus dolor. Vivamus a tortor
-                                    eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit
-                                    pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-                                    laboriosam, nisi ut aliquid ex ea commodi consequatur. At vero eos et accusamus et
-                                    iusto odio dignissimos ducimus.</p>
+                                <p>It's my blog, there are some articles about Algorithm, Web, Hadoop and so on.</p>
                             </div><!--//desc-->
 
                         </div><!--//item-->
@@ -158,9 +147,7 @@
                     <h2 class="heading">Skills</h2>
                     <div class="content">
                         <p class="intro">
-                            Intro about your skills goes here. Keep the list lean and only show your primary skillset.
-                            You can always provide a link to your Linkedin or Coderwall profile so people can get more
-                            info there.</p>
+                            There are my skills.</p>
 
                         <div class="skillset">
 
@@ -250,14 +237,6 @@
         </div><!--//secondary-->
     </div><!--//row-->
 </div><!--//masonry-->
-
-<!-- ******FOOTER****** -->
-<footer class="footer">
-    <div class="container text-center">
-        <small class="copyright">More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
-            - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></small>
-    </div><!--//container-->
-</footer><!--//footer-->
 
 <!-- Javascript -->
 <script type="text/javascript" src="assets/plugins/jquery-1.11.2.min.js"></script>

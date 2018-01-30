@@ -26,8 +26,8 @@ public class controller {
         int countArticle = articleService.maxId();
         int countPage = (int) Math.ceil(countArticle / 3.0);
         String Page_s = httpServletRequest.getParameter("Page");
-        int Page = Integer.parseInt(Page_s);
-        countArticle -= 3 * (Page - 1);
+        int currentPage = Integer.parseInt(Page_s);
+        countArticle -= 3 * (currentPage - 1);
 
         Map<Integer, Article> articleMap = new LinkedHashMap<Integer, Article>();
         for (int i = countArticle; countArticle - i < 3 && i > 0; i--) {
@@ -36,11 +36,9 @@ public class controller {
         }
 
 
-        httpServletRequest.setAttribute("countPage", countArticle);
-        httpServletRequest.setAttribute("currentPage", Page);
+        httpServletRequest.setAttribute("currentPage", currentPage);
         httpServletRequest.setAttribute("countPage", countPage);
         httpServletRequest.setAttribute("articleMap", articleMap);
-        httpServletRequest.setAttribute("maxArticle", countArticle);
 
 
         return "blog/index";
@@ -48,10 +46,12 @@ public class controller {
 
     @RequestMapping(value = "changeArticle", method = RequestMethod.GET)
     public String changeArticle(HttpServletRequest httpServletRequest) {
+        //get id and article
+        int id = Integer.parseInt(httpServletRequest.getParameter("id"));
+        Article article = articleService.searchArticle(id);
 
-        String id_s = httpServletRequest.getParameter("id");
-        int id = Integer.parseInt(id_s);
-        String imagePath = "/assets/images/blog/article";
+        //get id after change
+        String imagePath = "http://120.78.59.213/articlePicture/article";
         String change = httpServletRequest.getParameter("change");
         if (change == null) {
 
@@ -65,7 +65,7 @@ public class controller {
             return "redirect:index?Page=1";
         }
 
-        Article article = articleService.searchArticle(id);
+        //get article new title and imagine
         String preImagePath = imagePath + (id + 1) + "/article" + (id + 1) + "-M" + ".jpg";
         String nextImagePath = imagePath + +(id - 1) + "/article" + (id - 1) + "-M" + ".jpg";
         String nextTitle = null;
@@ -83,6 +83,8 @@ public class controller {
             nextTitle = articleService.searchArticle(id - 1).getTitle();
             preTitle = articleService.searchArticle(id + 1).getTitle();
         }
+
+
         httpServletRequest.setAttribute("id", id);
         httpServletRequest.setAttribute("imagePath", imagePath);
         httpServletRequest.setAttribute("preImagePath", preImagePath);
@@ -90,11 +92,18 @@ public class controller {
         httpServletRequest.setAttribute("article", article);
         httpServletRequest.setAttribute("preTitle", preTitle);
         httpServletRequest.setAttribute("nextTitle", nextTitle);
+
+
         return "blog/article";
     }
 
+    /*
+        remember to add function that if admin has loin , turn to add article,
+                                    else turn to login.
+    */
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String add() {
+    public String add(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().setAttribute("turnPoint", "add");
         return "blog/login";
     }
 
@@ -103,8 +112,12 @@ public class controller {
         User user = articleService.check();
         boolean name = user.getName().equals(httpServletRequest.getParameter("name"));
         boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
+        String turnPoint = (String) httpServletRequest.getSession().getAttribute("turnPoint");
         if (name && password) {
-            return "blog/addArticle";
+            if (turnPoint.equals("add"))
+                return "blog/addArticle";
+            else if (turnPoint.equals("update"))
+                return "blog/updateArticle";
         }
         return "redirect:index?Page=1";
     }
@@ -112,11 +125,15 @@ public class controller {
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
     public String addArticle(HttpServletRequest httpServletRequest,
                              @RequestParam("image") MultipartFile multipartFile) throws Exception {
+
+        //set title content for article
         Article article = new Article();
         article.setTitle(httpServletRequest.getParameter("title"));
         article.setContent(httpServletRequest.getParameter("content"));
+
+        //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/trafalgar/IdeaProjects/MyPage/src/main/webapp/assets/images/blog/article" + (articleService.maxId() + 1);
+        String localImgPath = "/home/Pictures/blog/article" + (articleService.maxId() + 1);
         File file = new File(localImgPath);
         if (!file.exists())
             file.mkdir();
@@ -128,8 +145,56 @@ public class controller {
             multipartFile.transferTo(localImg);
         }
 
+        //save
         if (!article.getContent().equals("") && !article.getTitle().equals(""))
             articleService.addArticle(article, localImgPath);
+        return "redirect:index?Page=1";
+    }
+
+    @RequestMapping(value = "update", method = RequestMethod.GET)
+    public String update(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().setAttribute("turnPoint", "update");
+        return "blog/login";
+    }
+
+    @RequestMapping(value = "updateArticle", method = RequestMethod.POST)
+    public String updateArticle(HttpServletRequest httpServletRequest,
+                                @RequestParam("image") MultipartFile multipartFile) throws Exception {
+        //set title content for article
+        int id = Integer.parseInt(httpServletRequest.getParameter("id"));
+
+        Article article = articleService.searchArticle(id);
+        if (httpServletRequest.getParameter("checkTile")!=null)
+            article.setTitle(httpServletRequest.getParameter("title"));
+        if (httpServletRequest.getParameter("checkContent")!=null)
+            article.setContent(httpServletRequest.getParameter("content"));
+
+        //save imagine to server
+        String img = multipartFile.getOriginalFilename();
+        String localImgPath = "/home/Pictures/blog/article" + id;
+
+        if(httpServletRequest.getParameter("checkImage")!=null) {
+            File file = new File(localImgPath);
+            if (!file.exists())
+                file.mkdir();
+            localImgPath = localImgPath + "/article" + id;
+            if (multipartFile != null && img.length() > 0) {
+                File localImg = new File(localImgPath + ".jpg");
+                if (!localImg.exists())
+                    localImg.createNewFile();
+                else {
+                    localImg.delete();
+                    localImg.createNewFile();
+                }
+                multipartFile.transferTo(localImg);
+            }
+        }
+        else{
+            localImgPath=null;
+        }
+        //save
+        if (!article.getContent().equals("") && !article.getTitle().equals(""))
+            articleService.updateArticle(article, localImgPath);
         return "redirect:index?Page=1";
     }
 }

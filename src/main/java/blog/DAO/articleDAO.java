@@ -4,6 +4,7 @@ import LibraryManagementSystem.Entity.User;
 import blog.Entity.Article;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -44,4 +45,22 @@ public class articleDAO {
         query.setParameter(0,"trafalgar");
         return (User) query.uniqueResult();
     }
+
+    public  void updateArticle(Article article){
+        String hql = "update Article  set Article.title =:title,Article.content =:content where Article.id =:";
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        //        Query query = session.createQuery(hql);
+//        query.seti
+//        query.executeUpdate();
+        System.out.println(article.getId());
+        System.out.println(article.getTitle());
+        System.out.println(article.getContent());
+        System.out.println(article.getDate());
+        session.update(article);
+        session.getTransaction().commit();
+        session.close();
+        return;
+    }
+
 }

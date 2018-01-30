@@ -28,20 +28,22 @@
 <body>
 <div class="header">
     <div class="container">
-        <h1>Im TrafalgarRicardoLu</h1>
-        <h2>Im a web developer</h2>
+        <h1>I'm TrafalgarRicardoLu</h1>
+        <h2>I'm a web developer</h2>
         <p>Here is my blog.</p>
         <div class="header_arrow">
             <a href="#articleList" class="scroll"><span> </span></a>
         </div>
     </div>
 </div>
+
+<%-- article list --%>
 <div class="content_top" id="articleList">
     <div class="container">
         <div class="fh5co-post">
             <c:forEach items="${articleMap}" var="article">
                 <div class="fh5co-entry padding">
-                    <img src="/assets/images/blog/article${article.key}/article${article.key}-S.jpg" alt="${article.value.title}">
+                    <img src="/articlePicture/article${article.key}/article${article.key}-S.jpg" alt="${article.value.title}">
                     <div>
                         <span class="fh5co-post-date">${article.value.date}</span>
                         <h2><a href="/blog/changeArticle?id=${article.key}">${article.value.title}</a></h2>
@@ -52,6 +54,8 @@
         </div>
     </div>
 </div>
+
+<%-- page roller --%>
 <div>
     <nav class="Lagination">
         <ul>
@@ -69,6 +73,7 @@
         </ul>
     </nav>
 </div>
+
 <div class="gototop js-top">
     <a href="/blog/add"><i class="icon-file-add"></i></a>
 </div>
