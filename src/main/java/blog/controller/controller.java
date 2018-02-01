@@ -104,7 +104,12 @@ public class controller {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().setAttribute("turnPoint", "add");
-        return "blog/login";
+        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
+        if(loginStatus!=null && loginStatus.equals("true")){
+            return "blog/addArticle";
+        }else{
+            return "blog/login";
+        }
     }
 
     @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
@@ -114,10 +119,13 @@ public class controller {
         boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
         String turnPoint = (String) httpServletRequest.getSession().getAttribute("turnPoint");
         if (name && password) {
+            httpServletRequest.getSession().setAttribute("login","true");
             if (turnPoint.equals("add"))
                 return "blog/addArticle";
             else if (turnPoint.equals("update"))
                 return "blog/updateArticle";
+        }else{
+            httpServletRequest.getSession().setAttribute("login","false");
         }
         return "redirect:index?Page=1";
     }
@@ -125,6 +133,10 @@ public class controller {
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
     public String addArticle(HttpServletRequest httpServletRequest,
                              @RequestParam("image") MultipartFile multipartFile) throws Exception {
+
+        if(httpServletRequest.getSession().getAttribute("login").equals("false")){
+            return "blog/login";
+        }
 
         //set title content for article
         Article article = new Article();
@@ -154,12 +166,22 @@ public class controller {
     @RequestMapping(value = "update", method = RequestMethod.GET)
     public String update(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().setAttribute("turnPoint", "update");
-        return "blog/login";
+        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
+        if(loginStatus!=null && loginStatus.equals("true")){
+            return "blog/updateArticle";
+        }else{
+            return "blog/login";
+        }
     }
 
     @RequestMapping(value = "updateArticle", method = RequestMethod.POST)
     public String updateArticle(HttpServletRequest httpServletRequest,
                                 @RequestParam("image") MultipartFile multipartFile) throws Exception {
+
+        if(httpServletRequest.getSession().getAttribute("login").equals("false")){
+            return "blog/login";
+        }
+
         //set title content for article
         int id = Integer.parseInt(httpServletRequest.getParameter("id"));
 
