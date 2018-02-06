@@ -16,4 +16,6 @@
 - **Client**
      - Clients can borrow, return and search books.
 - **Manager**
-    - Maneger can add, delete and search books.
+    - Manager can add, delete and search books.
+    
+    
