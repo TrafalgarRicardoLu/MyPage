@@ -96,11 +96,7 @@ public class controller {
 
         return "blog/article";
     }
-
-    /*
-        remember to add function that if admin has loin , turn to add article,
-                                    else turn to login.
-    */
+    
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().setAttribute("turnPoint", "add");
