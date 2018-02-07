@@ -27,7 +27,6 @@ public class articleDAO {
         Session session = sessionFactory.openSession();
         session.save(article);
         session.close();
-        return;
     }
 
     public Article searchArticle(int id){
@@ -47,20 +46,11 @@ public class articleDAO {
     }
 
     public  void updateArticle(Article article){
-        String hql = "update Article  set Article.title =:title,Article.content =:content where Article.id =:";
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        //        Query query = session.createQuery(hql);
-//        query.seti
-//        query.executeUpdate();
-        System.out.println(article.getId());
-        System.out.println(article.getTitle());
-        System.out.println(article.getContent());
-        System.out.println(article.getDate());
         session.update(article);
         session.getTransaction().commit();
         session.close();
-        return;
     }
 
 }
