@@ -96,17 +96,6 @@ public class controller {
 
         return "blog/article";
     }
-    
-    @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String add(HttpServletRequest httpServletRequest) {
-        httpServletRequest.getSession().setAttribute("turnPoint", "add");
-        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
-        if(loginStatus!=null && loginStatus.equals("true")){
-            return "blog/addArticle";
-        }else{
-            return "blog/login";
-        }
-    }
 
     @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
     public String loginCheck(HttpServletRequest httpServletRequest) {
@@ -124,6 +113,17 @@ public class controller {
             httpServletRequest.getSession().setAttribute("login","false");
         }
         return "redirect:index?Page=1";
+    }
+
+    @RequestMapping(value = {"add","addArticle"}, method = RequestMethod.GET)
+    public String add(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().setAttribute("turnPoint", "add");
+        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
+        if(loginStatus!=null && loginStatus.equals("true")){
+            return "blog/addArticle";
+        }else{
+            return "blog/login";
+        }
     }
 
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
@@ -159,7 +159,7 @@ public class controller {
         return "redirect:index?Page=1";
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.GET)
+    @RequestMapping(value = {"update","updateArticle"}, method = RequestMethod.GET)
     public String update(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().setAttribute("turnPoint", "update");
         String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
