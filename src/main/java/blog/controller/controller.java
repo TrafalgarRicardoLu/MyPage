@@ -48,7 +48,7 @@ public class controller {
     public String changeArticle(HttpServletRequest httpServletRequest) {
         //get id and article
         int id = Integer.parseInt(httpServletRequest.getParameter("id"));
-        Article article = articleService.searchArticle(id);
+
 
         //get id after change
         String imagePath = "http://120.78.59.213/articlePicture/article";
@@ -66,6 +66,7 @@ public class controller {
         }
 
         //get article new title and imagine
+        Article article = articleService.searchArticle(id);
         String preImagePath = imagePath + (id + 1) + "/article" + (id + 1) + "-M" + ".jpg";
         String nextImagePath = imagePath + +(id - 1) + "/article" + (id - 1) + "-M" + ".jpg";
         String nextTitle = null;
@@ -74,10 +75,12 @@ public class controller {
         if (id == 1) {
             nextImagePath = "/assets/images/blog/banner.jpg";
             nextTitle = "Index";
+            preTitle = articleService.searchArticle(id + 1).getTitle();
         }
         if (id == articleService.maxId()) {
             preImagePath = "/assets/images/blog/banner.jpg";
             preTitle = "Index";
+            nextTitle = articleService.searchArticle(id - 1).getTitle();
         }
         if (id != 1 && id != articleService.maxId()) {
             nextTitle = articleService.searchArticle(id - 1).getTitle();
@@ -141,7 +144,7 @@ public class controller {
 
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/Pictures/blog/article" + (articleService.maxId() + 1);
+        String localImgPath = "/home/trafalgar/Pictures/blog/article" + (articleService.maxId() + 1);
         File file = new File(localImgPath);
         if (!file.exists())
             file.mkdir();
@@ -172,7 +175,7 @@ public class controller {
 
     @RequestMapping(value = "updateArticle", method = RequestMethod.POST)
     public String updateArticle(HttpServletRequest httpServletRequest,
-                                @RequestParam("image") MultipartFile multipartFile) throws Exception {
+                                 @RequestParam("image") MultipartFile multipartFile) throws Exception {
 
         if(httpServletRequest.getSession().getAttribute("login").equals("false")){
             return "blog/login";
@@ -189,7 +192,7 @@ public class controller {
 
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/Pictures/blog/article" + id;
+        String localImgPath = "/home/trafalgar/Pictures/blog/article" + id;
 
         if(httpServletRequest.getParameter("checkImage")!=null) {
             File file = new File(localImgPath);

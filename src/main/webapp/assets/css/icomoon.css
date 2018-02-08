@@ -34,3 +34,6 @@
 .icon-file-add:before {
   content: "\e125";
 }
+.icon-home:before {
+  content: "\e9b8";
+}
