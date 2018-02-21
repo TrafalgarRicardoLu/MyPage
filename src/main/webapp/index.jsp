@@ -37,7 +37,7 @@
                 <li><a href="https://github.com/TrafalgarRicardoLu"><i class="fa fa-github-alt"></i></a></li>
             </ul>
         </div><!--//profile-->
-        <a class="btn btn-cta-primary pull-right" href="trafalgarricardolu@gmail.com" target="_blank"><i
+        <a class="btn btn-cta-primary pull-right" href="mailto:trafalgarricardolu@gmail.com" target="_blank"><i
                 class="fa fa-paper-plane"></i> Contact Me</a>
     </div><!--//container-->
 </header><!--//header-->
@@ -132,7 +132,7 @@
                             <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>HangZhou, CN
                             </li>
                             <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a
-                                    href="trafalgarricardo@gmail.com">trafalgarricardo@gmail.com</a>
+                                    href="mailto:trafalgarricardo@gmail.com">trafalgarricardo@gmail.com</a>
                             </li>
                             <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a
                                     href="https://github.com/TrafalgarRicardoLu">github.com/TrafalgarRicardoLu</a>
