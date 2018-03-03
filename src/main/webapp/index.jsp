@@ -60,8 +60,8 @@
                     <h2 class="heading">Articles</h2>
                     <div class="content">
                         <div class="item featured text-center">
-                            <h3 class="title"><a href="/blog/index?Page=1" target="_blank" >Blog Index</a></h3>
-                            <p class="summary">My Blog which contain lots of articles</p>
+                            <h3 class="title"><a href="/blog/index?Page=1" target="_blank" >blog Index</a></h3>
+                            <p class="summary">My blog which contain lots of articles</p>
                             <div class="featured-image">
                                 <a href="/blog/index?Page=1" target="_blank">
                                     <img class="img-responsive project-image"

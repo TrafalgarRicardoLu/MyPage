@@ -1,4 +1,4 @@
-package LibraryManagementSystem.service;
+package LibraryManagementSystem.Service;
 
 import LibraryManagementSystem.DAO.UserDao;
 import LibraryManagementSystem.Entity.User;

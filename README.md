@@ -1,7 +1,7 @@
 # MyPage----A simple Java Web application
 #### It has used Spring to create beans, Spring MVC to control request, Hibernate to control data, and MySql as database.
 #### It has two main sections.
-## Section ONE ----- [Blog](https://github.com/TrafalgarRicardoLu/MyPage)
+## Section ONE ----- [blog](https://github.com/TrafalgarRicardoLu/MyPage)
 ### It will used as my own blog.
 - **Index**
     - All the css style sources were downloading from Internet.If you want to use the CSS code.[Click Here](https://github.com/TrafalgarRicardoLu/MyPage/tree/master/src/main/webapp/assets/css)<br/>
