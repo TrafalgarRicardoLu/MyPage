@@ -1,8 +1,8 @@
-package blog.controller;
+package blog.Controller;
 
 import LibraryManagementSystem.Entity.User;
 import blog.Entity.Article;
-import blog.service.articleService;
+import blog.Service.articleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package blog.service;
+package blog.Service;
 
 import LibraryManagementSystem.Entity.User;
 import Utils.imgResize;
