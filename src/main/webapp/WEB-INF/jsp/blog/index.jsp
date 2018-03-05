@@ -46,7 +46,7 @@
                     <img src="/articlePicture/article${article.key}/article${article.key}-S.jpg" alt="${article.value.title}">
                     <div>
                         <span class="fh5co-post-date">${article.value.date}</span>
-                        <h2><a href="/blog/changeArticle?id=${article.key}">${article.value.title}</a></h2>
+                        <h2><a href="/blog/Article?id=${article.key}">${article.value.title}</a></h2>
                         <p>${article.value.title}</p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
 </div>
 
 <div class="gototop js-top">
-    <a href="/blog/add"><i class="icon-file-add"></i></a>
+    <a href="/blog/addArticle"><i class="icon-file-add"></i></a>
 </div>
 
 <script src="/assets/plugins/jquery-1.11.2.min.js"></script>

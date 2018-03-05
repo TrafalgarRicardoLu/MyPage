@@ -11,7 +11,7 @@
     <title>updateArticle</title>
 </head>
 <body>
-<form action="/blog/updateArticle" method="post" enctype="multipart/form-data">
+<form action="/blog/Article" method="put" enctype="multipart/form-data">
     ID <input type="text" name="id"><br>
     Title<input type="text" name="title"><input type="checkbox" name="checkTile"><br>
     Image<input type="file" accept="image/jpeg" name="image"><input type="checkbox" name="checkImage"><br>

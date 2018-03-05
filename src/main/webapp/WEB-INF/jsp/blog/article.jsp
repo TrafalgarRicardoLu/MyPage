@@ -46,7 +46,7 @@
     <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(${preImagePath})">
 
         <div class="overlay"></div>
-        <a class="copy" href="/blog/changeArticle?id=${id}&change=pre">
+        <a class="copy" href="/blog/Article?id=${id}&change=pre">
             <div class="display-t">
                 <div class="display-tc">
                     <div>
@@ -60,7 +60,7 @@
     </div>
     <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(${nextImagePath})">
         <div class="overlay"></div>
-        <a class="copy" href="/blog/changeArticle?id=${id}&change=next">
+        <a class="copy" href="/blog/Article?id=${id}&change=next">
             <div class="display-t">
                 <div class="display-tc">
                     <div>
@@ -75,7 +75,7 @@
 </div>
 
 <div class="gototop js-top">
-    <a href="/blog/update" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    <a href="/blog/updateArticle"><i class="icon-arrow-up"></i></a>
 </div>
 
 

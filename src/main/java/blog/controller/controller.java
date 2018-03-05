@@ -44,7 +44,47 @@ public class controller {
         return "blog/index";
     }
 
-    @RequestMapping(value = "changeArticle", method = RequestMethod.GET)
+    @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
+    public String loginCheck(HttpServletRequest httpServletRequest) {
+        User user = articleService.check();
+        boolean name = user.getName().equals(httpServletRequest.getParameter("name"));
+        boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
+        String turnPoint = (String) httpServletRequest.getSession().getAttribute("turnPoint");
+        if (name && password) {
+            httpServletRequest.getSession().setAttribute("login","true");
+            if (turnPoint.equals("add"))
+                return "redirect:addArticle";
+            else if (turnPoint.equals("update"))
+                return "redirect:updateArticle";
+        }else{
+            httpServletRequest.getSession().setAttribute("login","false");
+        }
+        return "redirect:index?Page=1";
+    }
+
+    @RequestMapping(value = {"add","addArticle"}, method = RequestMethod.GET)
+    public String add(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().setAttribute("turnPoint", "add");
+        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
+        if(loginStatus!=null && loginStatus.equals("true")){
+            return "blog/addArticle";
+        }else{
+            return "blog/login";
+        }
+    }
+
+    @RequestMapping(value = {"update","updateArticle"}, method = RequestMethod.GET)
+    public String update(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().setAttribute("turnPoint", "update");
+        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
+        if(loginStatus!=null && loginStatus.equals("true")){
+            return "blog/updateArticle";
+        }else{
+            return "blog/login";
+        }
+    }
+
+    @RequestMapping(value = "Article", method = RequestMethod.GET)
     public String changeArticle(HttpServletRequest httpServletRequest) {
         //get id and article
         int id = Integer.parseInt(httpServletRequest.getParameter("id"));
@@ -100,36 +140,7 @@ public class controller {
         return "blog/article";
     }
 
-    @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
-    public String loginCheck(HttpServletRequest httpServletRequest) {
-        User user = articleService.check();
-        boolean name = user.getName().equals(httpServletRequest.getParameter("name"));
-        boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
-        String turnPoint = (String) httpServletRequest.getSession().getAttribute("turnPoint");
-        if (name && password) {
-            httpServletRequest.getSession().setAttribute("login","true");
-            if (turnPoint.equals("add"))
-                return "blog/addArticle";
-            else if (turnPoint.equals("update"))
-                return "blog/updateArticle";
-        }else{
-            httpServletRequest.getSession().setAttribute("login","false");
-        }
-        return "redirect:index?Page=1";
-    }
-
-    @RequestMapping(value = {"add","addArticle"}, method = RequestMethod.GET)
-    public String add(HttpServletRequest httpServletRequest) {
-        httpServletRequest.getSession().setAttribute("turnPoint", "add");
-        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
-        if(loginStatus!=null && loginStatus.equals("true")){
-            return "blog/addArticle";
-        }else{
-            return "blog/login";
-        }
-    }
-
-    @RequestMapping(value = "addArticle", method = RequestMethod.POST)
+    @RequestMapping(value = "Article", method = RequestMethod.POST)
     public String addArticle(HttpServletRequest httpServletRequest,
                              @RequestParam("image") MultipartFile multipartFile) throws Exception {
 
@@ -144,7 +155,7 @@ public class controller {
 
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/trafalgar/Pictures/blog/article" + (articleService.maxId() + 1);
+        String localImgPath = "/home/Pictures/blog/article" + (articleService.maxId() + 1);
         File file = new File(localImgPath);
         if (!file.exists())
             file.mkdir();
@@ -162,20 +173,9 @@ public class controller {
         return "redirect:index?Page=1";
     }
 
-    @RequestMapping(value = {"update","updateArticle"}, method = RequestMethod.GET)
-    public String update(HttpServletRequest httpServletRequest) {
-        httpServletRequest.getSession().setAttribute("turnPoint", "update");
-        String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
-        if(loginStatus!=null && loginStatus.equals("true")){
-            return "blog/updateArticle";
-        }else{
-            return "blog/login";
-        }
-    }
-
-    @RequestMapping(value = "updateArticle", method = RequestMethod.POST)
+    @RequestMapping(value = "Article", method = RequestMethod.PUT)
     public String updateArticle(HttpServletRequest httpServletRequest,
-                                 @RequestParam("image") MultipartFile multipartFile) throws Exception {
+                                @RequestParam("image") MultipartFile multipartFile) throws Exception {
 
         if(httpServletRequest.getSession().getAttribute("login").equals("false")){
             return "blog/login";
@@ -192,7 +192,7 @@ public class controller {
 
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/trafalgar/Pictures/blog/article" + id;
+        String localImgPath = "/home/Pictures/blog/article" + id;
 
         if(httpServletRequest.getParameter("checkImage")!=null) {
             File file = new File(localImgPath);
@@ -218,4 +218,8 @@ public class controller {
             articleService.updateArticle(article, localImgPath);
         return "redirect:index?Page=1";
     }
+
+
+
+
 }
