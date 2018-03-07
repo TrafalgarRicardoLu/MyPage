@@ -132,7 +132,7 @@
                             <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>HangZhou, CN
                             </li>
                             <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a
-                                    href="mailto:trafalgarricardo@gmail.com">trafalgarricardo@gmail.com</a>
+                                    href="mailto:trafalgarricardolu@gmail.com">trafalgarricardolu@gmail.com</a>
                             </li>
                             <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a
                                     href="https://github.com/TrafalgarRicardoLu">github.com/TrafalgarRicardoLu</a>
