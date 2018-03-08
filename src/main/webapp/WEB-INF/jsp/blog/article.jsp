@@ -83,7 +83,6 @@
 <script src="/assets/js/jquery.easing.1.3.js"></script>
 <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/js/jquery.waypoints.min.js"></script>
-<script src="/assets/js/jquery.stellar.min.js"></script>
 <script src="/assets/js/mainBlog.js"></script>
 
 </body>

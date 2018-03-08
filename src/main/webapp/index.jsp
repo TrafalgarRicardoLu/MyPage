@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive HTML5 Website landing Page for Developers">
     <meta name="author" content="3rd Wave Media">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
@@ -65,7 +65,7 @@
                             <div class="featured-image">
                                 <a href="/blog/index?Page=1" target="_blank">
                                     <img class="img-responsive project-image"
-                                         src="assets/images/blog/banner.jpg" alt="MyBlog"/>
+                                         src="assets/images/banner.jpg" alt="MyBlog"/>
                                 </a>
                             </div>
 

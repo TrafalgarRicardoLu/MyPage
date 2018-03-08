@@ -26,7 +26,7 @@ body a {
 }
 
 .header {
-    background: url(/assets/images/blog/banner.jpg) no-repeat;
+    background: url(/assets/images/banner.jpg) no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -67,7 +67,7 @@ body a {
     width: 36px;
     height: 35px;
     display: inline-block;
-    background: url(/assets/images/blog/arrow.png) no-repeat 0px 0px;
+    background: url(/assets/images/arrow.png) no-repeat 0px 0px;
     vertical-align: middle;
     margin-top: 5em;
 }

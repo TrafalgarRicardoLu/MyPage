@@ -113,12 +113,12 @@ public class controller {
         String preTitle = null;
         imagePath = imagePath + id + "/article" + id + "-L" + ".jpg";
         if (id == 1) {
-            nextImagePath = "/assets/images/blog/banner.jpg";
+            nextImagePath = "/assets/images/banner.jpg";
             nextTitle = "Index";
             preTitle = articleService.searchArticle(id + 1).getTitle();
         }
         if (id == articleService.maxId()) {
-            preImagePath = "/assets/images/blog/banner.jpg";
+            preImagePath = "/assets/images/banner.jpg";
             preTitle = "Index";
             nextTitle = articleService.searchArticle(id - 1).getTitle();
         }

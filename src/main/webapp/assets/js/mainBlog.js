@@ -97,18 +97,7 @@
 		$(".fh5co-loader").fadeOut("slow");
 	};
 
-	
-	var parallax = function() {
 
-		if ( !isMobile.any() ) {
-			$(window).stellar({
-				horizontalScrolling: false,
-				hideDistantElements: false, 
-				responsive: true
-
-			});
-		}
-	};
 
 
 	$(function(){
@@ -116,7 +105,6 @@
 		
 		goToTop();
 		loaderPage();
-		parallax();
 	});
 
 
