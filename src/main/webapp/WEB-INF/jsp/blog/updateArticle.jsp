@@ -9,10 +9,21 @@
 <html>
 <head>
     <title>updateArticle</title>
+    <script type="text/javascript">
+        function checkID() {
+            var ID = document.getElementById("id").value;
+            if(ID==""){
+                alert("ID Can't be Null");
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
 </head>
 <body>
-<form action="/blog/Article" method="put" enctype="multipart/form-data">
-    ID <input type="text" name="id"><br>
+<form action="/blog/Article" method="put" enctype="multipart/form-data" onsubmit="return checkID()">
+    ID <input type="text" id="id"><br>
     Title<input type="text" name="title"><input type="checkbox" name="checkTile"><br>
     Image<input type="file" accept="image/jpeg" name="image"><input type="checkbox" name="checkImage"><br>
     Content<textarea rows="30" cols="30" name="content"></textarea><input type="checkbox" name="checkContent"><br>
