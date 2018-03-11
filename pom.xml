@@ -8,6 +8,7 @@
     <groupId>groupId</groupId>
     <artifactId>MyPage</artifactId>
     <version>1.0</version>
+
     <packaging>war</packaging>
 
     <developers>
