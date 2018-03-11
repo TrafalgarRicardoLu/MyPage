@@ -1,6 +1,7 @@
 package blog.Controller;
 
 import LibraryManagementSystem.Entity.User;
+import Utils.ConfigHelper;
 import blog.Entity.Article;
 import blog.Service.articleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,35 +52,35 @@ public class controller {
         boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
         String turnPoint = (String) httpServletRequest.getSession().getAttribute("turnPoint");
         if (name && password) {
-            httpServletRequest.getSession().setAttribute("login","true");
+            httpServletRequest.getSession().setAttribute("login", "true");
             if (turnPoint.equals("add"))
                 return "redirect:addArticle";
             else if (turnPoint.equals("update"))
                 return "redirect:updateArticle";
-        }else{
-            httpServletRequest.getSession().setAttribute("login","false");
+        } else {
+            httpServletRequest.getSession().setAttribute("login", "false");
         }
         return "redirect:index?Page=1";
     }
 
-    @RequestMapping(value = {"add","addArticle"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"add", "addArticle"}, method = RequestMethod.GET)
     public String add(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().setAttribute("turnPoint", "add");
         String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
-        if(loginStatus!=null && loginStatus.equals("true")){
+        if (loginStatus != null && loginStatus.equals("true")) {
             return "blog/addArticle";
-        }else{
+        } else {
             return "blog/login";
         }
     }
 
-    @RequestMapping(value = {"update","updateArticle"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"update", "updateArticle"}, method = RequestMethod.GET)
     public String update(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().setAttribute("turnPoint", "update");
         String loginStatus = (String) httpServletRequest.getSession().getAttribute("login");
-        if(loginStatus!=null && loginStatus.equals("true")){
+        if (loginStatus != null && loginStatus.equals("true")) {
             return "blog/updateArticle";
-        }else{
+        } else {
             return "blog/login";
         }
     }
@@ -144,7 +145,7 @@ public class controller {
     public String addArticle(HttpServletRequest httpServletRequest,
                              @RequestParam("image") MultipartFile multipartFile) throws Exception {
 
-        if(httpServletRequest.getSession().getAttribute("login").equals("false")){
+        if (httpServletRequest.getSession().getAttribute("login").equals("false")) {
             return "blog/login";
         }
 
@@ -152,18 +153,21 @@ public class controller {
         Article article = new Article();
         article.setTitle(httpServletRequest.getParameter("title"));
         article.setContent(httpServletRequest.getParameter("content"));
-
+        System.out.println(article.getTitle());
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/Pictures/blog/article" + (articleService.maxId() + 1);
+        String localImgPath = ConfigHelper.getLocalImgPath() + (articleService.maxId() + 1);
         File file = new File(localImgPath);
-        if (!file.exists())
+        if (!file.exists()) {
             file.mkdir();
+        }
+
         localImgPath = localImgPath + "/article" + (articleService.maxId() + 1);
         if (multipartFile != null && img.length() > 0) {
             File localImg = new File(localImgPath + ".jpg");
-            if (!localImg.exists())
+            if (!localImg.exists()) {
                 localImg.createNewFile();
+            }
             multipartFile.transferTo(localImg);
         }
 
@@ -177,7 +181,7 @@ public class controller {
     public String updateArticle(HttpServletRequest httpServletRequest,
                                 @RequestParam("image") MultipartFile multipartFile) throws Exception {
 
-        if(httpServletRequest.getSession().getAttribute("login").equals("false")){
+        if (httpServletRequest.getSession().getAttribute("login").equals("false")) {
             return "blog/login";
         }
 
@@ -185,41 +189,40 @@ public class controller {
         int id = Integer.parseInt(httpServletRequest.getParameter("id"));
 
         Article article = articleService.searchArticle(id);
-        if (httpServletRequest.getParameter("checkTile")!=null)
+        if (httpServletRequest.getParameter("checkTile") != null)
             article.setTitle(httpServletRequest.getParameter("title"));
-        if (httpServletRequest.getParameter("checkContent")!=null)
+        if (httpServletRequest.getParameter("checkContent") != null)
             article.setContent(httpServletRequest.getParameter("content"));
 
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = "/home/Pictures/blog/article" + id;
+        String localImgPath = ConfigHelper.getLocalImgPath() + id;
 
-        if(httpServletRequest.getParameter("checkImage")!=null) {
+        if (httpServletRequest.getParameter("checkImage") != null) {
             File file = new File(localImgPath);
-            if (!file.exists())
+            if (!file.exists()) {
                 file.mkdir();
+            }
             localImgPath = localImgPath + "/article" + id;
             if (multipartFile != null && img.length() > 0) {
                 File localImg = new File(localImgPath + ".jpg");
-                if (!localImg.exists())
+                if (!localImg.exists()) {
                     localImg.createNewFile();
-                else {
+                } else {
                     localImg.delete();
                     localImg.createNewFile();
                 }
                 multipartFile.transferTo(localImg);
             }
+        } else {
+            localImgPath = null;
         }
-        else{
-            localImgPath=null;
-        }
+
         //save
         if (!article.getContent().equals("") && !article.getTitle().equals(""))
             articleService.updateArticle(article, localImgPath);
         return "redirect:index?Page=1";
     }
-
-
 
 
 }
