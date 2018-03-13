@@ -1,7 +1,9 @@
 package blog.DAO;
 
-import LibraryManagementSystem.Entity.User;
+
+import Utils.ConfigHelper;
 import blog.Entity.Article;
+import blog.Entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -40,7 +42,7 @@ public class articleDAO {
         String hql = "from User where name = ?";
         Session session = sessionFactory.openSession();
         Query query = session.createQuery(hql);
-        query.setParameter(0,"trafalgar");
+        query.setParameter(0, ConfigHelper.getUserName());
         return (User) query.uniqueResult();
     }
 

@@ -1,8 +1,9 @@
 package blog.Controller;
 
-import LibraryManagementSystem.Entity.User;
+
 import Utils.ConfigHelper;
 import blog.Entity.Article;
+import blog.Entity.User;
 import blog.Service.articleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

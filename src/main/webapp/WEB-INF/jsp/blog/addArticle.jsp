@@ -30,7 +30,7 @@
 <form action="/blog/Article" method="post" enctype="multipart/form-data" onsubmit="return check()">
     Img: <input type="file" accept="image/jpeg" name="image"><br>
     Title: <input type="text" name ="title"><br>
-    Content: <textarea rows="30" cols="300" name ="content"></textarea><br>
+    Content: <textarea rows="30" cols="100" name ="content"></textarea><br>
     <input type="submit" name="提交">
 </form>
 </body>

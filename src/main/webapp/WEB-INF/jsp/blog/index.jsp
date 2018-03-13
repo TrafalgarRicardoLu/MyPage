@@ -10,8 +10,8 @@
     <link href="/assets/plugins/bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <link href="/assets/css/styleBlog.css" rel='stylesheet' type='text/css'/>
     <link href="/assets/css/Divider.css" rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="/assets/css/icomoon.css">
-    <link rel="stylesheet" href="/assets/css/styleSingle.css">
+    <link href="/assets/css/icomoon.css" rel="stylesheet" >
+    <link href="/assets/css/styleSingle.css" rel="stylesheet">
     <script src="/assets/plugins/jquery-1.11.2.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
