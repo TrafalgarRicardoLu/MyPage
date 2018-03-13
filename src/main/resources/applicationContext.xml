@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:component-scan
-            base-package="LibraryManagementSystem,blog">
+            base-package="blog">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -27,7 +27,6 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>LibraryManagementSystem</value>
                 <value>blog</value>
             </list>
         </property>
