@@ -15,7 +15,6 @@
     <meta name="author" content="3rd Wave Media">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -95,16 +94,6 @@
                                   target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
                         </div>
 
-                        <div class="item">
-                            <h3 class="title"><a href="/user/login" target="_blank">Library Management System</a> <span
-                                    class="label label-theme">Open Source</span></h3>
-                            <p class="summary">A simple Java Web application accomplished with SpringMVC ,Spring
-                                ,Hibernate.
-                                It is build as a Maven Project. </p>
-                            <p><a class="more-link"
-                                  href="https://github.com/TrafalgarRicardoLu/MyPage"
-                                  target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-                        </div><!--//item-->
                         <div class="item">
                             <h3 class="title"><a
                                     href="https://github.com/TrafalgarRicardoLu/Algorithm-and-DataStructure"
