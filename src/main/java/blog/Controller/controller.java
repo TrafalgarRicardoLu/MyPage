@@ -3,7 +3,6 @@ package blog.Controller;
 
 import Utils.ConfigHelper;
 import blog.Entity.Article;
-import blog.Entity.User;
 import blog.Service.articleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,11 +47,11 @@ public class controller {
 
     @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
     public String loginCheck(HttpServletRequest httpServletRequest) {
-        User user = articleService.check();
-        boolean name = user.getName().equals(httpServletRequest.getParameter("name"));
-        boolean password = user.getPassword().equals(httpServletRequest.getParameter("password"));
+        String name = httpServletRequest.getParameter("name");
+        String password = httpServletRequest.getParameter("password");
+        boolean check = articleService.check(name,password);
         String turnPoint = (String) httpServletRequest.getSession().getAttribute("turnPoint");
-        if (name && password) {
+        if (check) {
             httpServletRequest.getSession().setAttribute("login", "true");
             if (turnPoint.equals("add"))
                 return "redirect:addArticle";

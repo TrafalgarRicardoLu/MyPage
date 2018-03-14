@@ -3,7 +3,6 @@ package blog.Service;
 import Utils.imgResize;
 import blog.DAO.articleDAO;
 import blog.Entity.Article;
-import blog.Entity.User;
 import org.pegdown.PegDownProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
+
 @Service
 public class articleService {
     @Autowired
@@ -23,7 +23,7 @@ public class articleService {
     }
 
 
-    public void addArticle(Article article,String imgPath) throws Exception {
+    public void addArticle(Article article, String imgPath) throws Exception {
 
         //format data
         Date now = new Date();
@@ -31,38 +31,38 @@ public class articleService {
         int year = cal.get(Calendar.YEAR);
         int month1 = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
-        article.setDate(month[month1]+"  "+day+",  "+year);
+        article.setDate(month[month1] + "  " + day + ",  " + year);
 
         //transfer markdown to html
         String content = article.getContent();
         PegDownProcessor pegDownProcessor = new PegDownProcessor();
         content = pegDownProcessor.markdownToHtml(content);
-        content=content.replaceAll("</.*\\bcode\\b>","</pre>");
-        content=content.replaceAll("<.*\\bcode\\b>","<pre>");
-        content=content.replaceAll("&emsp;&emsp;","</br>&emsp;&emsp;");
+        content = content.replaceAll("</.*\\bcode\\b>", "</pre>");
+        content = content.replaceAll("<.*\\bcode\\b>", "<pre>");
+        content = content.replaceAll("&emsp;&emsp;", "</br>&emsp;&emsp;");
         article.setContent(content);
 
         //resize image
-        imgResize.saveMinPhoto(imgPath+".jpg",imgPath+"-S.jpg",200,1);
-        imgResize.saveMinPhoto(imgPath+".jpg",imgPath+"-M.jpg",800,1);
-        imgResize.saveMinPhoto(imgPath+".jpg",imgPath+"-L.jpg",2000,1);
+        imgResize.saveMinPhoto(imgPath + ".jpg", imgPath + "-S.jpg", 200, 1);
+        imgResize.saveMinPhoto(imgPath + ".jpg", imgPath + "-M.jpg", 800, 1);
+        imgResize.saveMinPhoto(imgPath + ".jpg", imgPath + "-L.jpg", 2000, 1);
 
 
         articleDAO.addArticle(article);
     }
 
-    public void updateArticle(Article article,String imgPath) throws Exception {
+    public void updateArticle(Article article, String imgPath) throws Exception {
         //transfer markdown to html
         String content = article.getContent();
         PegDownProcessor pegDownProcessor = new PegDownProcessor();
         content = pegDownProcessor.markdownToHtml(content);
-        content=content.replaceAll("</.*\\bcode\\b>","</pre>");
-        content=content.replaceAll("<.*\\bcode\\b>","<pre>");
-        content=content.replaceAll("&emsp;&emsp;","</br>&emsp;&emsp;");
+        content = content.replaceAll("</.*\\bcode\\b>", "</pre>");
+        content = content.replaceAll("<.*\\bcode\\b>", "<pre>");
+        content = content.replaceAll("&emsp;&emsp;", "</br>&emsp;&emsp;");
         article.setContent(content);
 
         //resize image
-        if(imgPath!=null) {
+        if (imgPath != null) {
             File image_S = new File(imgPath + "-S.jpg");
             File image_M = new File(imgPath + "-M.jpg");
             File image_L = new File(imgPath + "-L.jpg");
@@ -80,7 +80,11 @@ public class articleService {
         return articleDAO.searchArticle(id);
     }
 
-    public User check(){
-        return articleDAO.check();
+    public Boolean check(String name, String password) {
+        String[] NameAndPassword = articleDAO.check().split("&");
+        if (NameAndPassword[0].equals(name) && NameAndPassword[1].equals(password)) {
+            return true;
+        }
+        return false;
     }
 }
