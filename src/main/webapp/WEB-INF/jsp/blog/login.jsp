@@ -21,15 +21,16 @@
 
             position: fixed;
 
-            width:100%;
+            width: 100%;
 
-            height:100%;
+            height: 100%;
 
             background: url("/assets/images/banner.jpg") no-repeat;
 
-            background-size:cover;
+            background-size: cover;
 
         }
+
         .container {
             display: table;
             height: 100%;
@@ -51,6 +52,21 @@
             margin-right: -4px;
         }
     </style>
+    <script type="text/javascript">
+        function check() {
+            var name = document.getElementsByName("name").item(0).value;
+            var password = document.getElementsByName("password").item(0).value;
+            if (name == "") {
+                alert("Title Can't be Null");
+                return false;
+            } else if (password == "") {
+                alert("Content Can't be Null")
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -58,7 +74,7 @@
     <div class="row row-centered">
         <div class="well col-md-6 col-centered">
             <h2>欢迎登录</h2>
-            <form action="/blog/loginCheck" role="form" method="post">
+            <form action="/blog/loginCheck" role="form" method="post" onsubmit="return check()">
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon1">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
