@@ -75,7 +75,7 @@
 </div>
 
 <div class="gototop js-top">
-    <a href="/blog/updateArticle"><i class="icon-arrow-up"></i></a>
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
 
 
