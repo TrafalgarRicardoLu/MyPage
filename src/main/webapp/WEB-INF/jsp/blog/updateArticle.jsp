@@ -22,11 +22,11 @@
     </script>
 </head>
 <body>
-<form action="/blog/Article" method="put" enctype="multipart/form-data" onsubmit="return checkID()">
+<form action="/blog/updateArticle" method="post" enctype="multipart/form-data" onsubmit="return checkID()">
     ID <input type="text" name="id"><br>
     Title<input type="text" name="title"><input type="checkbox" name="checkTile"><br>
     Image<input type="file" accept="image/jpeg" name="image"><input type="checkbox" name="checkImage"><br>
-    Content<textarea rows="30" cols="30" name="content"></textarea><input type="checkbox" name="checkContent"><br>
+    Content<textarea rows="30" cols="30d" name="content"></textarea><input type="checkbox" name="checkContent"><br>
     <input type="submit" name="提交">
 </form>
 </body>

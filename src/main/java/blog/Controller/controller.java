@@ -177,7 +177,7 @@ public class controller {
         return "redirect:index?Page=1";
     }
 
-    @RequestMapping(value = "Article", method = RequestMethod.PUT)
+    @RequestMapping(value = "updateArticle", method = RequestMethod.POST)
     public String updateArticle(HttpServletRequest httpServletRequest,
                                 @RequestParam("image") MultipartFile multipartFile) throws Exception {
 
