@@ -24,6 +24,6 @@ public final class ConfigHelper {
         return PropsUtil.getString(CONFIG_PROPS,ConfigConstant.USERNAME);
     }
 
-
+    public static String getImgpath(){return  PropsUtil.getString(CONFIG_PROPS,ConfigConstant.IMAGE_PATH);}
 
 }

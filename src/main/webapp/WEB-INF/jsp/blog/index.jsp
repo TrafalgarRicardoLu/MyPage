@@ -43,7 +43,7 @@
         <div class="fh5co-post">
             <c:forEach items="${articleMap}" var="article">
                 <div class="fh5co-entry padding">
-                    <img src="/articlePicture/article${article.key}/article${article.key}-S.jpg" alt="${article.value.title}">
+                    <img src="http://120.78.59.213:8080/blogPictures/article${article.key}/article${article.key}-S.jpg" alt="${article.value.title}">
                     <div>
                         <span class="fh5co-post-date">${article.value.date}</span>
                         <h2><a href="/blog/Article?id=${article.key}">${article.value.title}</a></h2>

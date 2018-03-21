@@ -92,7 +92,7 @@ public class controller {
 
 
         //get id after change
-        String imagePath = "http://120.78.59.213/articlePicture/article";
+        String imagePath = ConfigHelper.getImgpath();
         String change = httpServletRequest.getParameter("change");
         if (change == null) {
 
@@ -156,7 +156,7 @@ public class controller {
         System.out.println(article.getTitle());
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = ConfigHelper.getLocalImgPath() + (articleService.maxId() + 1);
+        String localImgPath = ConfigHelper.getServerImgPath() + (articleService.maxId() + 1);
         File file = new File(localImgPath);
         if (!file.exists()) {
             file.mkdir();
@@ -196,7 +196,7 @@ public class controller {
 
         //save imagine to server
         String img = multipartFile.getOriginalFilename();
-        String localImgPath = ConfigHelper.getLocalImgPath() + id;
+        String localImgPath = ConfigHelper.getServerImgPath() + id;
 
         if (httpServletRequest.getParameter("checkImage") != null) {
             File file = new File(localImgPath);

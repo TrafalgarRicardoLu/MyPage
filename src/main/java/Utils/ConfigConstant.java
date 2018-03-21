@@ -12,6 +12,7 @@ public interface ConfigConstant {
 
     String LOCAL_IMG_PATH = "LocalImgPath";
     String SERVER_IMG_PATH = "ServerImgPath";
-    String USERNAME ="Username";
+    String USERNAME = "Username";
+    String IMAGE_PATH = "ImgPath";
 
 }
